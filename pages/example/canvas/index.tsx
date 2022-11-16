@@ -11,6 +11,8 @@ export default function Canvas() {
   });
   const [frameCount] = useState<number>(21);
 
+  const [currentFrameIndex, setCurrentFrameIndex] = useState(1);
+
   const currentFrame = (index: number) => {
     return `/bus/BUS_${index.toString().padStart(3, "0")}.png`;
   };
@@ -46,11 +48,17 @@ export default function Canvas() {
     };
 
     const onScroll = () => {
+      console.time();
+
       const percentScroll = scrollYProgress.get();
       const scrollFraction = percentScroll * (frameCount - 1);
 
       const frameIndex = Math.min(Math.ceil(scrollFraction));
-      requestAnimationFrame(() => updateImage(frameIndex + 1));
+      if (frameIndex !== currentFrameIndex) {
+        setCurrentFrameIndex(frameIndex);
+        requestAnimationFrame(() => updateImage(frameIndex + 1));
+      }
+      console.timeEnd();
     };
 
     window.addEventListener("scroll", onScroll);
