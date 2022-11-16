@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Best School';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Best School'), url('./fonts/BestSchoolFont.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Hynings';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Hynings'), url('./fonts/HyningsHandwriting-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Eyra-200Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Eyra-200Light'), url('./fonts/Eyra/Eyra-200Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Eyra-500Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Eyra-500Bold'), url('./fonts/Eyra/Eyra-500Bold.otf') format('opentype');
+}
+
 html,
 body {
   padding: 0;
@@ -23,6 +51,7 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
