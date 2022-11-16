@@ -1,14 +1,18 @@
+import { RefObject, useEffect, useRef, useState } from "react";
+import { MotionValue, useScroll } from "framer-motion";
+import cls from "classnames";
 import styles from "./canvas.module.scss";
-import { useEffect, useRef, useState } from "react";
-import { useScroll } from "framer-motion";
 
-export default function Canvas() {
+export interface CanvasProps {
+  scrollYProgress: MotionValue<number>;
+  className?: string;
+}
+
+export default function Canvas(props: CanvasProps) {
+  const { scrollYProgress, className = "" } = props;
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+
   const [frameCount] = useState<number>(21);
 
   const [currentFrameIndex, setCurrentFrameIndex] = useState(1);
@@ -22,6 +26,7 @@ export default function Canvas() {
       const img = new Image();
       img.src = currentFrame(i);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -48,8 +53,6 @@ export default function Canvas() {
     };
 
     const onScroll = () => {
-      console.time();
-
       const percentScroll = scrollYProgress.get();
       const scrollFraction = percentScroll * (frameCount - 1);
 
@@ -58,7 +61,6 @@ export default function Canvas() {
         setCurrentFrameIndex(frameIndex);
         requestAnimationFrame(() => updateImage(frameIndex + 1));
       }
-      console.timeEnd();
     };
 
     window.addEventListener("scroll", onScroll);
@@ -66,11 +68,10 @@ export default function Canvas() {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, [canvasRef, scrollYProgress, frameCount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [canvasRef, scrollYProgress]);
 
   return (
-    <section ref={containerRef} className={styles.container}>
-      <canvas ref={canvasRef} className={styles.canvas}></canvas>
-    </section>
+    <canvas ref={canvasRef} className={cls(styles.canvas, className)}></canvas>
   );
 }
