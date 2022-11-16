@@ -4,7 +4,11 @@ import { useScroll } from "framer-motion";
 
 export default function Canvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { scrollYProgress } = useScroll();
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
   const [frameCount] = useState<number>(21);
 
   const currentFrame = (index: number) => {
@@ -57,7 +61,7 @@ export default function Canvas() {
   }, [canvasRef, scrollYProgress, frameCount]);
 
   return (
-    <section className={styles.container}>
+    <section ref={containerRef} className={styles.container}>
       <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </section>
   );
