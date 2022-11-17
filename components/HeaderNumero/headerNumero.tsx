@@ -8,6 +8,6 @@ type HeaderNumeroProps = {
   
 export function HeaderNumero({ children }: HeaderNumeroProps) { 
   return <div className={cls(styles.highlight, "flex justify-center")}>
-    <span className="pr-[12px]">{ children }</span>
+     <span className="pr-[8px]">{ children }</span>
   </div>
 }

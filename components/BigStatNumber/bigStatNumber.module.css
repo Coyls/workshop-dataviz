@@ -1,0 +1,11 @@
+.highlight {
+    background: url('./../../public/image/bigStat-highlight.svg') no-repeat center;
+    background-size: contain;
+}
+
+.arrow {
+    background: url('./../../public/image/bigStat-arrow.svg') no-repeat center;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}

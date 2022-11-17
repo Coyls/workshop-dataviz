@@ -18,14 +18,14 @@ export function HeaderItem({children, title, isDeployed, index, currentIndex, se
         onClick={()=>setCurrentIndex(index)}
         style={{transition: 'opacity 500ms'}}
     >
-        <div className='flex gap-5'>
+        <div className='flex gap-4'>
             <HeaderNumero>0{index}</HeaderNumero>
             {!isLast && <div className='flex-1 self-center'>
-                <div className='border-[1px] border-dashed border-black h-0 '/>
+                <div className='border-t-[1px] border-dashed border-black h-1 '/>
             </div>}
         </div>
-        <div className="pl-6 pr-4 flex-1 font-['Eyra-500Bold'] text-base leading-5">
-            <span className="font-['Eyra-200Light'] uppercase tracking-wider leading-7 text-gray-700">{title} <br/></span>
+        <div className="pl-[20px] flex-1 font-['Eyra-400Medium'] text-base leading-5">
+            <span className="font-['Eyra-400Light'] text-sm uppercase leading-7 text-gray-700">{title} <br/></span>
             <SmoothCollapse expanded={isDeployed}>
                 {children}
             </SmoothCollapse>

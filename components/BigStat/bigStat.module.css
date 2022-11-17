@@ -1,0 +1,10 @@
+
+.bg{
+    background: url("./../../public/image/WHEELCHAIR_BACKGROUND.png");
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
