@@ -51,11 +51,13 @@ export function Footer(){
                     height={60}
                     alt="Logo de Gobelins Paris" />
             </div>
-            <div className="flex-1 text-center text-[#FEFCFF] font-['Eyra-400Light']">
-                Projet réalisé dans le cadre de la formation CCI - École des Gobelins Annecy par <br />
-                <span className="font-['Eyra-400Regular']">
-                    Lucas Leperlier, Jean Deleage, Apolline Grember, Jereymy Lagadec, Loïc Greco
-                </span>
+            <div className="flex-1 flex justify-end pr-14 text-[#FEFCFF] font-['Eyra-400Light']">
+                <div>
+                    Projet réalisé dans le cadre de la formation CCI - École des Gobelins Annecy par <br />
+                    <span className="font-['Eyra-400Regular']">
+                        Lucas Leperlier, Jean Deleage, Apolline Grember, Jereymy Lagadec, Loïc Greco
+                    </span>
+                </div>
             </div>
             <div className="font-['Eyra-400ExtraLight'] text-[#FEFCFF]">
                 <p>Projet étudiant B3</p>
