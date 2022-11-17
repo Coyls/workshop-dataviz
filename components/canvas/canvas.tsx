@@ -23,12 +23,15 @@ export default function Canvas(props: CanvasProps) {
   };
 
   useEffect(() => {
+    const imageLoads: HTMLImageElement[] = [];
     for (let i = 1; i < frameCount; i++) {
       const img = new Image();
       img.src = loadImage(i);
-      setImages([...images, img]);
-      console.log("images", images);
+      imageLoads.push(img);
+      console.log("imageLoads", imageLoads);
     }
+    setImages(imageLoads);
+    console.log("images", images);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
