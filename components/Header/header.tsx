@@ -41,7 +41,7 @@ export function Header() {
         <HeaderItem  title="Handicap et métro" isDeployed={isDeployed} index={3} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}>
         Le labyrinthe à escalier, comment accéder au métro <Highlighter> en toute sécurité ?</Highlighter>
         </HeaderItem>
-        <HeaderItem title="Des quotidiens différents ?" isDeployed={isDeployed} index={4} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}>
+        <HeaderItem title="Des quotidiens différents ?" isDeployed={isDeployed} index={4} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} isLast>
             L’autonomie ca s’invente pas, <Highlighter> ca se vit !</Highlighter>
         </HeaderItem>
         </div>
