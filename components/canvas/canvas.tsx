@@ -16,15 +16,18 @@ export default function Canvas(props: CanvasProps) {
   const [frameCount] = useState<number>(21);
 
   const [currentFrameIndex, setCurrentFrameIndex] = useState(1);
+  const [images, setImages] = useState<HTMLImageElement[]>([]);
 
-  const currentFrame = (index: number) => {
+  const loadImage = (index: number) => {
     return `/bus/BUS_${index.toString().padStart(3, "0")}.png`;
   };
 
   useEffect(() => {
     for (let i = 1; i < frameCount; i++) {
       const img = new Image();
-      img.src = currentFrame(i);
+      img.src = loadImage(i);
+      setImages([...images, img]);
+      console.log("images", images);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -40,14 +43,15 @@ export default function Canvas(props: CanvasProps) {
 
     canvas.width = 2048;
     canvas.height = 2048;
-    img.src = currentFrame(1);
+    img.src = loadImage(1);
 
     img.onload = () => {
       context.drawImage(img, 0, 0);
     };
 
     const updateImage = (index: number) => {
-      img.src = currentFrame(index);
+      const img = images[index - 1];
+      console.log("images", images);
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(img, 0, 0);
     };
