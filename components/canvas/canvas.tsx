@@ -34,7 +34,9 @@ export default function Canvas(props: CanvasProps) {
   };
 
   useEffect(() => {
-    preloadImages();
+    if (imageLoads.length === 0) {
+      preloadImages();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

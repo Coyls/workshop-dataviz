@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import cls from "classnames";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
+export interface TextStickyProps {
+  className?: string;
+}
 
-export default function TextSticky() {
+const textVariants: Variants = {
+  visible: { opacity: 1, transition: { duration: 1 } },
+  hidden: { opacity: 0 },
+};
+
+export default function TextSticky(props: TextStickyProps) {
+  const { className } = props;
+
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
+
   return (
-    <div>
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={textVariants}
+      className={cls(className)}
+    >
       <article className="flex flex-col h-full justify-center">
         <p className="text-3xl">01</p>
         <p className="font-extralight">LA RENCONTRE</p>
@@ -31,6 +58,6 @@ export default function TextSticky() {
           tristique magna sit.
         </p>
       </article>
-    </div>
+    </motion.div>
   );
 }

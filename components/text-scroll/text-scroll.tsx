@@ -1,6 +1,6 @@
-import { motion, MotionValue } from "framer-motion";
-import { useEffect, useState } from "react";
 import cls from "classnames";
+import { motion, MotionValue, Variants } from "framer-motion";
+import TextSticky from "./text-sticky";
 
 export interface TextScrollProps {
   scrollYProgress: MotionValue<number>;
@@ -12,13 +12,18 @@ export default function TextScroll(props: TextScrollProps) {
 
   const sections = ["bg-red-600", "bg-yellow-600", "bg-blue-600"];
 
+  const variants: Variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
   return (
     <div className={className}>
       {sections.map((section, i) => {
         return (
-          <div key={i} className={cls("h-1/3 relative", section)}>
-            {/* <Text /> */}
-          </div>
+          <motion.div key={i} className={cls("h-1/3 relative", section)}>
+            <TextSticky className=" sticky top-[20vh]" />
+          </motion.div>
         );
       })}
     </div>
