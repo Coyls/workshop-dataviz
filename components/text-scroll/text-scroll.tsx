@@ -1,7 +1,9 @@
 import cls from "classnames";
 import { motion, MotionValue, Variants } from "framer-motion";
+import { HeaderNumero } from "../HeaderNumero/headerNumero";
+import { Highlighter } from "../Highlighter/hightlighter";
 import TextSticky from "./text-sticky";
-
+import styles from './text-scroll.module.css'
 export interface TextScrollProps {
   scrollYProgress: MotionValue<number>;
   className?: string;
@@ -15,9 +17,9 @@ export default function TextScroll(props: TextScrollProps) {
   return (
     <div className={className}>
       <TextSticky>
-        <p className="text-3xl">01</p>
-        <p className="font-extralight">LA RENCONTRE</p>
-        <h3 className="text-3xl font-bold my-6">
+        <HeaderNumero>01</HeaderNumero>
+        <span className="font-['Eyra-400Light'] text-xl uppercase text-gray-700 mt-5">LA RENCONTRE</span>
+        <h3 className="font-['Eyra-400Bold'] text-[28px] mt-1 mb-5 leading-9">
           Monter dans un bus quand on est handicapé moteur, une épreuve ?
         </h3>
         <svg
@@ -34,7 +36,7 @@ export default function TextScroll(props: TextScrollProps) {
             strokeLinecap="round"
           />
         </svg>
-        <p className="text-2xl mt-6">
+        <p className="text-2xl mt-6 font-[Eyra-400Light] text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet
           non curabitur gravida arcu ac tortor dignissim. Nibh praesent
@@ -120,11 +122,21 @@ export default function TextScroll(props: TextScrollProps) {
         </svg>
       </TextSticky>
       <TextSticky relative>
-        <p>
-          Id diam vel quam elementum pulvinar etiam. Eros in cursus turpis
-          massa. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Sed
-          faucibus turpis in eu mi bibendum neque egestas congue.
-        </p>
+        <div className="font-['Eyra-400Bold'] text-[28px] leading-9">
+          L’évolution <Highlighter>du nombre d’arrêts</Highlighter> de bus <Highlighter>accessibles</Highlighter> en Île-de-France  
+        </div>
+        <div className="text-2xl mt-3.5 mb-5 font-[Eyra-400Light] text-xl">
+          Id diam vel quam elementum pulvinar etiam. Eros in cursus turpis massa. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Sed faucibus turpis in eu mi bibendum neque egestas congue.
+        </div>
+        <div className={styles.arrow}/>
+        <div className="flex items-center">
+          <div className={cls(styles.highlight, "flex justify-center items-center")}>
+            <div className="text-[#141414] text-5xl font-['Eyra-400Bold'] pr-[8px]">433</div>
+          </div>
+          <div className="font-['Eyra-400Light'] text-2xl uppercase text-gray-700">
+            arrêts équipés en 2017
+          </div>
+        </div>
       </TextSticky>
     </div>
   );
