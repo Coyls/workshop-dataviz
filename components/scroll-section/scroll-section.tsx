@@ -14,7 +14,7 @@ export default function ScrollSection() {
   return (
     <section
       ref={containerRef}
-      className="flex flex-row h-[300vh] w-screen relative bg-cyan-400 px-16 justify-between"
+      className="flex flex-row h-[300vh] w-screen relative  px-16 justify-between"
     >
       <div className="sticky top-0 w-[595px] h-screen">
         <div className="flex flex-col h-full justify-center">
