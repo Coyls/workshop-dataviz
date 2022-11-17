@@ -1,0 +1,19 @@
+
+
+
+.highlightContainer, .highlight {
+    position: relative;
+  }
+  
+  .highlightContainer {
+    display: inline-block;
+  }
+  .highlightContainer:before {
+    content: " ";
+    display: block;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    background: #F6FF8F;
+    border-radius: 20%;
+  }
