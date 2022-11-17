@@ -1,29 +1,53 @@
-import { useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionValue } from "framer-motion";
+import { useEffect } from "react";
 import Canvas from "../canvas/canvas";
+import { useScrollContext } from "../scroll-context.context";
 import TextScroll from "../text-scroll/text-scroll";
 
 export const ScrollSection = () => {
-  const containerRef = useRef<HTMLElement>(null);
+  const { containerScrollSectionRef, scrollSectionY, YAnimationScale } =
+    useScrollContext();
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  const opacity = useMotionValue(1);
+
+  useEffect(() => {
+    const updateOpacity = (val: number) => {
+      val >= 0.5 ? opacity.set(0) : opacity.set(1);
+    };
+
+    const unsubscribeYOpacity = YAnimationScale.onChange(updateOpacity);
+
+    return () => {
+      unsubscribeYOpacity();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section
-      ref={containerRef}
+      ref={containerScrollSectionRef}
       className="flex flex-row h-[300vh] w-screen relative  px-16 justify-between"
     >
       <div className="sticky top-0 w-[595px] h-screen">
-        <div className="flex flex-col h-full justify-center">
-          <Canvas scrollYProgress={scrollYProgress} className="w-full" />
-        </div>
+        <motion.div
+          style={{ opacity }}
+          transition={{ duration: 1 }}
+          className="flex flex-col h-full justify-center"
+        >
+          <Canvas
+            canvasWidth={2560}
+            canvasHeight={1440}
+            frameCount={141}
+            frameFilePath="/bus-rencontre/BUS_RENCONTRE_"
+            scrollYProgress={scrollSectionY}
+            className="w-full"
+            startingFrame={50}
+          />
+        </motion.div>
       </div>
 
       <TextScroll
-        scrollYProgress={scrollYProgress}
+        scrollYProgress={scrollSectionY}
         className="w-[595px] h-full"
       />
     </section>

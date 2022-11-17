@@ -5,31 +5,45 @@ import styles from "./canvas.module.scss";
 
 export interface CanvasProps {
   scrollYProgress: MotionValue<number>;
+  frameFilePath: string;
+  canvasWidth: number;
+  canvasHeight: number;
   className?: string;
+  frameCount: number;
+  startingFrame: number;
 }
 
 export default function Canvas(props: CanvasProps) {
-  const { scrollYProgress, className = "" } = props;
+  const {
+    scrollYProgress,
+    className = "",
+    frameFilePath,
+    canvasWidth,
+    canvasHeight,
+    frameCount,
+    startingFrame,
+  } = props;
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
 
   const imageLoads: HTMLImageElement[] = [];
-  const frameCount = 191;
 
   const loadImage = (index: number) => {
-    return `/bus-rencontre/BUS_RENCONTRE_${index.toString()}.png`;
+    return `${frameFilePath}${index.toString()}.png`;
   };
 
   const preloadImages = () => {
     console.time("preloadImages");
-    for (let i = 0; i < frameCount; i++) {
+    for (let i = startingFrame; i < frameCount + startingFrame; i++) {
       const img = new Image();
       img.src = loadImage(i);
+      console.log("loadImage(i)", loadImage(i));
       imageLoads.push(img);
     }
     console.log("Images Preload ! : ", imageLoads);
+    console.log("imageLoads Length !", imageLoads.length);
     console.timeEnd("preloadImages");
   };
 
@@ -49,8 +63,8 @@ export default function Canvas(props: CanvasProps) {
     const context = canvas.getContext("2d");
     if (context === null) return;
 
-    canvas.width = 2560;
-    canvas.height = 1440;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
     img.src = loadImage(0);
 
     img.onload = () => {
