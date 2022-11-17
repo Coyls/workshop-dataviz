@@ -31,10 +31,31 @@
 }
 
 @font-face {
+  font-family: 'Eyra-400Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Eyra-400Regular'), url('./fonts/Eyra/Eyra-400Regular.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'Eyra-400Bold';
   font-style: normal;
   font-weight: normal;
   src: local('Eyra-400Bold'), url('./fonts/Eyra/Eyra-400Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Eyra-500ExtraBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Eyra-500ExtraBold'), url('./fonts/Eyra/Eyra-500ExtraBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Eyra-800Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Eyra-800Bold'), url('./fonts/Eyra/Eyra-800Bold.otf') format('opentype');
 }
 
 @font-face {
@@ -68,13 +89,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
-  }
+.custom-home-bg{
+  background: url('./../public/image/bg-home.png');
+  background-size: contain;
 }
