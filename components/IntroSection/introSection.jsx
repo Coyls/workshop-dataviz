@@ -1,7 +1,7 @@
-import Image from "next/image";
 import React from "react";
 import { BigStatNumber } from "../BigStatNumber/bigStatNumber";
 import { Highlighter } from "../Highlighter/hightlighter";
+import {IntroSectionArrow} from './../IntroSectionArrow/introSectionArrow';
 
 export function IntroSection() {
     return <div className="w-full flex flex-col items-center py-24 gap-24">
@@ -12,11 +12,12 @@ export function IntroSection() {
                 <Highlighter> un enjeu pour l’autonomie ?</Highlighter>
                 </span>
                 <div className="absolute -left-[150px] top-1/2 flex flex-col items-end ">
-                    <Image 
+                    <IntroSectionArrow />
+                    {/* <Image 
                         src={"/image/introSection-arrow.svg"}
                         width="49" 
                         height="53"
-                        />
+                        /> */}
                     <span className="font-['Hynings'] text-2xl font-normal"> Rien que ça ! </span>
                 </div>
             </div>

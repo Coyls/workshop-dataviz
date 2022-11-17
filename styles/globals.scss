@@ -93,3 +93,25 @@ a {
   background: url('./../public/image/bg-home.png');
   background-size: contain;
 }
+
+.animatedSVG {
+  .draw-arrow {  
+      fill: none;
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400; 
+      animation-duration: 2.0s;
+      animation-fill-mode: forwards;
+      animation-name: draw;
+      animation-delay: .5s;
+          &.tail {
+          animation-delay: 1s;
+      }
+  }
+}
+
+@keyframes draw {
+  to {
+      stroke-dashoffset: 0;
+  }
+}
+
