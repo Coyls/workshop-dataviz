@@ -3,60 +3,60 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Best School';
+  font-family: "Best School";
   font-style: normal;
   font-weight: normal;
-  src: local('Best School'), url('./fonts/BestSchoolFont.otf') format('opentype');
+  src: local("Best School"), url("./fonts/BestSchoolFont.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Hynings';
+  font-family: "Hynings";
   font-style: normal;
   font-weight: normal;
-  src: local('Hynings'), url('./fonts/HyningsHandwriting-Regular.ttf') format('truetype');
+  src: local("Hynings"), url("./fonts/HyningsHandwriting-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Eyra-400Light';
+  font-family: "Eyra-400Light";
   font-style: normal;
   font-weight: normal;
-  src: local('Eyra-400Light'), url('./fonts/Eyra/Eyra-400Light.otf') format('opentype');
+  src: local("Eyra-400Light"), url("./fonts/Eyra/Eyra-400Light.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Eyra-400Medium';
+  font-family: "Eyra-400Medium";
   font-style: normal;
   font-weight: normal;
-  src: local('Eyra-400Medium'), url('./fonts/Eyra/Eyra-400Medium.otf') format('opentype');
+  src: local("Eyra-400Medium"), url("./fonts/Eyra/Eyra-400Medium.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Eyra-400Bold';
+  font-family: "Eyra-400Bold";
   font-style: normal;
   font-weight: normal;
-  src: local('Eyra-400Bold'), url('./fonts/Eyra/Eyra-400Bold.otf') format('opentype');
+  src: local("Eyra-400Bold"), url("./fonts/Eyra/Eyra-400Bold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Eyra-900Bold';
+  font-family: "Eyra-900Bold";
   font-style: normal;
   font-weight: normal;
-  src: local('Eyra-900Bold'), url('./fonts/Eyra/Eyra-900Bold.otf') format('opentype');
+  src: local("Eyra-900Bold"), url("./fonts/Eyra/Eyra-900Bold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Eyra-900ExtraBold';
+  font-family: "Eyra-900ExtraBold";
   font-style: normal;
   font-weight: normal;
-  src: local('Eyra-900ExtraBold'), url('./fonts/Eyra/Eyra-900ExtraBold.otf') format('opentype');
+  src: local("Eyra-900ExtraBold"), url("./fonts/Eyra/Eyra-900ExtraBold.otf") format("opentype");
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
 }
 
 a {
@@ -66,15 +66,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
-  }
 }
