@@ -33,7 +33,7 @@ export function IntroSection() {
                 </BigStatNumber>
             </div>
             <div className="uppercase w-3/5 text-center">
-                <p className="font-['Eyra-400Bold'] text-[28px] mb-2">
+                <p className="font-['Eyra-400Bold'] text-[28px] mb-2 leading-9">
                     personnes qui sont en situation de handicap moteur en france
                 </p>
                 <p className="font-['Eyra-400Medium'] text-xl">Soit 1,5% de la population adulte</p>

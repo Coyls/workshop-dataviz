@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Canvas from "../canvas/canvas";
 import TextScroll from "../text-scroll/text-scroll";
 
-export default function ScrollSection() {
+export const ScrollSection = () => {
   const containerRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -28,4 +28,4 @@ export default function ScrollSection() {
       />
     </section>
   );
-}
+};
