@@ -15,23 +15,25 @@ export default function Canvas(props: CanvasProps) {
 
   const [frameCount] = useState<number>(21);
 
-  const [currentFrameIndex, setCurrentFrameIndex] = useState(1);
+  const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
 
   const loadImage = (index: number) => {
     return `/bus/BUS_${index.toString().padStart(3, "0")}.png`;
   };
 
-  useEffect(() => {
+  const preloadImages = () => {
     const imageLoads: HTMLImageElement[] = [];
     for (let i = 1; i < frameCount; i++) {
       const img = new Image();
       img.src = loadImage(i);
       imageLoads.push(img);
-      console.log("imageLoads", imageLoads);
     }
     setImages(imageLoads);
-    console.log("images", images);
+  };
+
+  useEffect(() => {
+    preloadImages();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -54,15 +56,13 @@ export default function Canvas(props: CanvasProps) {
 
     const updateImage = (index: number) => {
       const img = images[index - 1];
-      console.log("images", images);
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(img, 0, 0);
     };
 
     const onScroll = () => {
       const percentScroll = scrollYProgress.get();
-      const scrollFraction = percentScroll * (frameCount - 1);
-
+      const scrollFraction = percentScroll * (frameCount - 2);
       const frameIndex = Math.min(Math.ceil(scrollFraction));
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
