@@ -18,21 +18,21 @@ export function Footer(){
                 <div className="flex flex-col w-1/3">
                 {
                     firstTier.map((s)=>{
-                        return <Link href={s.link}>{s.label}</Link>                        
+                        return <Link key={s.label} href={s.link}>{s.label}</Link>                        
                     })
                 }
                 </div>
                 <div className="flex flex-col w-1/3">
                 {
                     secondTier.map((s)=>{
-                        return <Link href={s.link}>{s.label}</Link>                        
+                        return <Link key={s.label} href={s.link}>{s.label}</Link>                        
                     })
                 }
                 </div>
                 <div className="flex flex-col w-1/3">
                 {
                     thirdTier.map((s)=>{
-                        return <Link href={s.link}>{s.label}</Link>                        
+                        return <Link key={s.label} href={s.link}>{s.label}</Link>                        
                     })
                 }
                 </div>
@@ -70,6 +70,7 @@ function Link({href, children}:any): JSX.Element{
     return <a 
         href={href} 
         target="_blank" 
+        rel="noreferrer"
         style={{textUnderlineOffset: "2px"}}
         className="whitespace-nowrap overflow-hidden text-ellipsis font-['Eyra-400Medium'] underline"
     >
