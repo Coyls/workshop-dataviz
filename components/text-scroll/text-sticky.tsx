@@ -1,36 +1,28 @@
-import React, { useEffect, useRef } from "react";
 import cls from "classnames";
-import { motion, useAnimation, useInView, Variants } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import {
+  DetailedHTMLProps,
+  HTMLAttributes,
+  MutableRefObject,
+  useEffect,
+  useRef,
+} from "react";
 export interface TextStickyProps {
   className?: string;
 }
 
-const textVariants: Variants = {
-  visible: { opacity: 1, transition: { duration: 1 } },
-  hidden: { opacity: 0 },
-};
-
 export default function TextSticky(props: TextStickyProps) {
   const { className } = props;
-
-  const ref = useRef(null);
-  const controls = useAnimation();
-  const isInView = useInView(ref);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
+    if (ref !== null) {
+      console.log("ref.current?.clientHeight;", ref.current?.clientHeight);
     }
-  }, [controls, isInView]);
+  }, [ref]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={textVariants}
-      className={cls(className)}
-    >
+    <div ref={ref} className={cls(className)}>
       <article className="flex flex-col h-full justify-center">
         <p className="text-3xl">01</p>
         <p className="font-extralight">LA RENCONTRE</p>
@@ -58,6 +50,6 @@ export default function TextSticky(props: TextStickyProps) {
           tristique magna sit.
         </p>
       </article>
-    </motion.div>
+    </div>
   );
 }

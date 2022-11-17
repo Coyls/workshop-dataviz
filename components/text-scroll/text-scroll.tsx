@@ -12,11 +12,6 @@ export default function TextScroll(props: TextScrollProps) {
 
   const sections = ["bg-red-600", "bg-yellow-600", "bg-blue-600"];
 
-  const variants: Variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  };
-
   return (
     <div className={className}>
       {sections.map((section, i) => {
