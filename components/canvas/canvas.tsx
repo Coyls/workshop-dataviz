@@ -39,7 +39,6 @@ export default function Canvas(props: CanvasProps) {
     for (let i = startingFrame; i < frameCount + startingFrame; i++) {
       const img = new Image();
       img.src = loadImage(i);
-      console.log("loadImage(i)", loadImage(i));
       imageLoads.push(img);
     }
     console.log("Images Preload ! : ", imageLoads);
