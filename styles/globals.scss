@@ -2,6 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Best School";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Best School"), url("./fonts/BestSchoolFont.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Hynings";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Hynings"), url("./fonts/HyningsHandwriting-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Eyra-400Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-400Light"), url("./fonts/Eyra/Eyra-400Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-400Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-400Medium"), url("./fonts/Eyra/Eyra-400Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-400Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-400Regular"), url("./fonts/Eyra/Eyra-400Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-400Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-400Bold"), url("./fonts/Eyra/Eyra-400Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-500ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-500ExtraBold"), url("./fonts/Eyra/Eyra-500ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-800Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-800Bold"), url("./fonts/Eyra/Eyra-800Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-900Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-900Bold"), url("./fonts/Eyra/Eyra-900Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-900ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-900ExtraBold"), url("./fonts/Eyra/Eyra-900ExtraBold.otf") format("opentype");
+}
+
 html,
 body {
   padding: 0;
@@ -16,4 +86,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.custom-home-bg {
+  background: url("./../public/image/bg-home.png");
+  background-size: contain;
 }

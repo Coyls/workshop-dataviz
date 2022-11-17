@@ -1,0 +1,10 @@
+
+
+.highlight {
+    background: url('./../../public/image/header-highlight.svg') no-repeat center;
+    width: 65px;
+    background-size: contain;
+    font-family: 'Hynings', serif;
+    font-size: 30px;
+    line-height: 35.4px;
+}
