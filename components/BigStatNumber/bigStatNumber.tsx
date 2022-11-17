@@ -4,7 +4,7 @@ import cls from 'classnames';
 
 type BigStatNumberProps = {
     children: any,
-    noArrow: boolean
+    noArrow?: boolean
 }
 
 export function BigStatNumber({children, noArrow}:BigStatNumberProps){
