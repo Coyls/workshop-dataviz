@@ -18,16 +18,13 @@ export default function ScrollSection() {
     >
       <div className="sticky top-0 w-[595px] h-screen">
         <div className="flex flex-col h-full justify-center">
-          <Canvas
-            scrollYProgress={scrollYProgress}
-            className="w-full h-[450px]"
-          />
+          <Canvas scrollYProgress={scrollYProgress} className="w-full" />
         </div>
       </div>
 
       <TextScroll
         scrollYProgress={scrollYProgress}
-        className="sticky top-0 w-[595px] h-screen"
+        className="w-[595px] h-full"
       />
     </section>
   );

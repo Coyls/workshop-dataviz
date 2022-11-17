@@ -10,6 +10,7 @@ export default function Home() {
       {/* <Header /> */}
       <section className="h-screen w-screen bg-cyan-400"></section>
       <ScrollSection />
+      <ScrollSection />
       <section className="h-screen w-screen bg-cyan-400"></section>
     </div>
   );

@@ -1,5 +1,6 @@
 import { motion, MotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
+import cls from "classnames";
 
 export interface TextScrollProps {
   scrollYProgress: MotionValue<number>;
@@ -9,70 +10,17 @@ export interface TextScrollProps {
 export default function TextScroll(props: TextScrollProps) {
   const { className = "", scrollYProgress } = props;
 
-  const [textIndex, setTextIndex] = useState(0);
-  const [currentOpacity, setcurrentOpacity] = useState(0);
-
-  const scrollSplit = [
-    { start: 0, end: 0.33 },
-    { start: 0.33, end: 0.66 },
-    { start: 0.66, end: 1 },
-  ];
-
-  // J'AI LE CERVEAU EN VRAC
-
-  useEffect(() => {
-    const onScroll = () => {
-      const percentScroll = scrollYProgress.get();
-
-      scrollSplit.forEach((vals, index) => {
-        if (vals.start < percentScroll && percentScroll < vals.end) {
-          if (index !== textIndex) {
-            setTextIndex(index);
-          }
-          // setcurrentOpacity();
-        }
-      });
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [scrollYProgress]);
+  const sections = ["bg-red-600", "bg-yellow-600", "bg-blue-600"];
 
   return (
     <div className={className}>
-      <article className="flex flex-col h-full justify-center">
-        <p className="text-3xl">01</p>
-        <p className="font-extralight">LA RENCONTRE</p>
-        <h3 className="text-3xl font-bold my-6">
-          Monter dans un bus quand on est handicapé moteur, une épreuve ?
-        </h3>
-        <svg
-          width="82"
-          height="17"
-          viewBox="0 0 82 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3 10.7653C9.14221 7.35633 12.7664 5.82591 18.9542 3.9057C27.8399 0.429399 19.6122 10.4171 22.145 13.5213C23.5484 15.2412 38.9413 -1.06107 42.9983 3.96695C43.9656 6.60908 41.5097 12.6182 45.7871 13.5213C50.1296 14.4382 54.6029 14.0638 58.6947 12.1739C65.1076 9.21204 71.6044 3.59947 79 3.59947"
-            stroke="#ECD6F5"
-            strokeWidth="5"
-            strokeLinecap="round"
-          />
-        </svg>
-
-        <motion.div style={{ opacity: scrollYProgress }}>
-          <p className="text-2xl mt-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet
-            non curabitur gravida arcu ac tortor dignissim. Nibh praesent
-            tristique magna sit.
-          </p>
-        </motion.div>
-      </article>
+      {sections.map((section, i) => {
+        return (
+          <div key={i} className={cls("h-1/3 relative", section)}>
+            {/* <Text /> */}
+          </div>
+        );
+      })}
     </div>
   );
 }
