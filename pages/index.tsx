@@ -3,6 +3,7 @@ import { Header } from '../components/Header/header'
 import { ShittyPage } from '../components/Header/shittyPage'
 import { IntroSection } from '../components/IntroSection/introSection'
 import { BusSection } from '../components/BusSection/busSection'
+import { Footer } from '../components/Footer/footer'
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <IntroSection/>
       <BusSection/>
       <BigStat/>
-      <ShittyPage/>
+      <Footer />
     </div>
   )
 }

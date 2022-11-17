@@ -1,7 +1,7 @@
 import React from "react";
 
-export function BusSection(){
+export function Footer(){
     return <div className="h-[300px]">
-        <i>(here the bus)</i>
+        <i> Footer </i>
     </div>
 }
