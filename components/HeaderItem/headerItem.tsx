@@ -13,7 +13,6 @@ type HeaderItemProps = {
     children: any
   }
 export function HeaderItem({children, title, isDeployed, index, currentIndex, setCurrentIndex, isLast}: HeaderItemProps) {   
-
     return <div className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
         onClick={()=>setCurrentIndex(index)}
         style={{transition: 'opacity 500ms'}}
