@@ -3,6 +3,7 @@ import {SOURCES} from './../../public/data/sources';
 
 import LinesEllipsis from 'react-lines-ellipsis';
 import Image from "next/image";
+import { GraphButton } from "../GraphButton/graphButton";
 
 export function Footer(){
 
