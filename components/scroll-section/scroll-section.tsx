@@ -28,7 +28,7 @@ export const ScrollSection = () => {
       ref={containerScrollSectionRef}
       className="flex flex-row h-[300vh] w-screen relative  px-16 justify-between"
     >
-      <div className="sticky top-0 w-[595px] h-screen">
+      <div className="sticky top-0 w-[59vw] h-screen">
         <motion.div
           style={{ opacity }}
           transition={{ duration: 1 }}
@@ -48,7 +48,7 @@ export const ScrollSection = () => {
 
       <TextScroll
         scrollYProgress={scrollSectionY}
-        className="w-[595px] h-full"
+        className="w-[28vw] h-full"
       />
     </section>
   );

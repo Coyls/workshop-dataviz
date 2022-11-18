@@ -10,6 +10,7 @@ export interface ScrollContextInterface {
   YAnimationTranslate: MotionValue<number>;
   containerScrollSectionRef: RefObject<HTMLElement>;
   scrollSectionY: MotionValue<number>;
+  scrollYGlobal: MotionValue<number>;
 }
 
 const ScrollCtx = createContext<ScrollContextInterface>(
@@ -21,6 +22,8 @@ export const ScrollProvider = ({ children }: { children?: ReactNode }) => {
   const animationScaleRef = useRef<HTMLDivElement>(null);
   const animationTranslateRef = useRef<HTMLDivElement>(null);
   const containerScrollSectionRef = useRef<HTMLElement>(null);
+
+  const { scrollY: scrollYGlobal } = useScroll();
 
   const { scrollYProgress: scrollSectionY } = useScroll({
     target: containerScrollSectionRef,
@@ -53,6 +56,7 @@ export const ScrollProvider = ({ children }: { children?: ReactNode }) => {
         YAnimationTranslate,
         containerScrollSectionRef,
         scrollSectionY,
+        scrollYGlobal,
       }}
     >
       {children}
