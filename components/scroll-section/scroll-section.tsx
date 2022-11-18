@@ -1,12 +1,18 @@
-import { motion, useMotionValue } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useMotionValue, useScroll } from "framer-motion";
+import { useEffect, useRef } from "react";
 import Canvas from "../canvas/canvas";
 import { useScrollContext } from "../scroll-context.context";
 import TextScroll from "../text-scroll/text-scroll";
 
 export const ScrollSection = ({ section }: any) => {
-  const { containerScrollSectionRef, scrollSectionY, YAnimationScale } =
-    useScrollContext();
+  const { YAnimationScale } = useScrollContext();
+
+  const containerScrollSectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress: scrollSectionY } = useScroll({
+    target: containerScrollSectionRef,
+    offset: ["start start", "end end"],
+  });
 
   const opacity = useMotionValue(1);
 

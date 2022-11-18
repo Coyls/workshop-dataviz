@@ -54,8 +54,8 @@ export function BusSection() {
           transition={{ duration: 1 }}
         >
           <Canvas
-            canvasWidth={2560}
-            canvasHeight={1440}
+            canvasWidth={805}
+            canvasHeight={453}
             frameCount={50}
             frameFilePath="/bus-rencontre/BUS_RENCONTRE_"
             scrollYProgress={YCanvas}
