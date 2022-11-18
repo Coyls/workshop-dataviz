@@ -4,12 +4,14 @@ import styles from "./TextStatSection.module.css"
 
 type TextStatSectionProps = {
     title: any,
-    statNumber: number,
+    statNumber: any,
     statLabel: string, 
     children: string;
 }
 
 export function TextStatSection({title, statNumber, statLabel, children}: TextStatSectionProps){
+
+
     return <>
             <div className="font-['Eyra-400Bold'] text-[28px] leading-9">
                 {title}
@@ -19,8 +21,8 @@ export function TextStatSection({title, statNumber, statLabel, children}: TextSt
             </div>
             <div className={styles.arrow}/>
             <div className="flex items-center">
-              <div className={cls(styles.highlight, "flex justify-center items-center")}>
-                <div className="text-[#141414] text-5xl font-['Eyra-400Bold'] pr-[8px]">{statNumber}</div>
+              <div className={cls(statNumber.number.isYellow ? styles.highlightYellow : styles.highlightLila, "flex justify-center items-center")}>
+                <div className="text-[#141414] text-5xl font-['Eyra-400Bold'] pr-[8px]">{statNumber.number}</div>
               </div>
               <div className="font-['Eyra-400Light'] text-2xl uppercase text-gray-700">
                 {statLabel}

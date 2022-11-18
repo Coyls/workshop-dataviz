@@ -4,6 +4,8 @@ import { IntroSection } from "../components/IntroSection/introSection";
 import { BusSection } from "../components/BusSection/busSection";
 import { ScrollSection } from "../components/scroll-section/scroll-section";
 import { Footer } from "../components/Footer/footer";
+import {CONTENT} from "./../public/data/sections";
+
 
 export default function Home() {
   return (
@@ -11,7 +13,12 @@ export default function Home() {
       <Header />
       <IntroSection />
       <BusSection />
-      <ScrollSection />
+      {
+        CONTENT.map((section, index)=>{
+          console.log(section)  
+          return <ScrollSection section={section} key={index}/>
+        })
+      }
       <BigStat />
       <Footer />
     </div>

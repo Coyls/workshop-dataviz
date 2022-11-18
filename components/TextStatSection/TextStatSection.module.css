@@ -9,8 +9,16 @@
 
 
 
-.highlight {
-    background: url('./../../public/image/textScroll-highlight.svg') no-repeat center;
+.highlightLila {
+    background: url('./../../public/image/textScroll-highlight-lila.svg') no-repeat center;
+    background-size: contain;
+    width: 130px;
+    height: 70px;
+}
+
+
+.highlightYellow {
+    background: url('./../../public/image/textScroll-highlight-yellow.svg') no-repeat center;
     background-size: contain;
     width: 130px;
     height: 70px;
