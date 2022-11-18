@@ -37,8 +37,9 @@ export const ScrollSection = (props: ScrollSectionProps) => {
 
   return (
     <section
+      id={"section-"+section.index}
       ref={containerScrollSectionRef}
-      className="flex flex-row h-[300vh] w-screen relative  px-16 justify-between"
+      className="flex flex-row h-[300vh] w-screen relative mt-1 px-16 justify-between"
     >
       <div className="sticky top-0 w-[59vw] h-screen">
         <motion.div
