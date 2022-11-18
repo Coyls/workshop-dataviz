@@ -42,6 +42,14 @@ export default function Canvas(props: CanvasProps) {
     return `${frameFilePath}${index.toString()}.png`;
   };
 
+  const duplicateLastFrame = () => {
+    const lastFrame = imageLoads[imageLoads.length - 1];
+
+    for (let i = 0; i < 50; i++) {
+      imageLoads.push(lastFrame);
+    }
+  };
+
   const preloadImages = () => {
     console.time("preloadImages");
     for (let i = startingFrame; i < frameCount + startingFrame; i++) {
@@ -49,6 +57,9 @@ export default function Canvas(props: CanvasProps) {
       img.src = loadImage(i);
       imageLoads.push(img);
     }
+
+    duplicateLastFrame();
+
     console.log("Images Preload ! : ", imageLoads);
     console.log("imageLoads Length !", imageLoads.length);
     console.timeEnd("preloadImages");
