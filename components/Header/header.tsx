@@ -78,11 +78,12 @@ export function Header({currentIndex, setCurrentIndex}:HeaderProps) {
             index={3}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
+            isLast
           >
             Le labyrinthe à escalier, comment accéder au métro <br />{" "}
             <Highlighter> en toute sécurité ?</Highlighter>
           </HeaderItem>
-          <HeaderItem
+          {/* <HeaderItem
             title="Des quotidiens différents ?"
             isDeployed={isDeployed}
             index={4}
@@ -92,7 +93,7 @@ export function Header({currentIndex, setCurrentIndex}:HeaderProps) {
           >
             L’autonomie ca s’invente pas, <br />{" "}
             <Highlighter> ca se vit !</Highlighter>
-          </HeaderItem>
+          </HeaderItem> */}
         </div>
       </div>
       <div className="h-[200px]" />
