@@ -30,11 +30,11 @@ export const CONTENT = [
     smallTitle: "Aider c'est comprendre",
     bigTitle: "S’arrêter à temps et au bon endroit, pas si simple !",
     canvas: {
-      canvasWidth: 2560,
-      canvasHeight: 1440,
-      frameCount: 141,
-      frameFilePath: "/bus-rencontre/BUS_RENCONTRE_",
-      startingFrame: 50,
+      canvasWidth: 805,
+      canvasHeight: 453,
+      frameCount: 151,
+      frameFilePath: "/bus-topdown/BUS_TOPDOWN_",
+      startingFrame: 0,
     },
     intro:
       "Anna arrive tant bien que mal à rentrer dans le bus, mais les personnes comme Carl ne sont pas toujours là lorsqu’il y a des problèmes.",
@@ -52,11 +52,11 @@ export const CONTENT = [
     bigTitle:
       "Le labyrinthe à escaliers : le métro quand on est atteint d’handicap moteur.",
     canvas: {
-      canvasWidth: 2560,
-      canvasHeight: 1440,
-      frameCount: 141,
-      frameFilePath: "/bus-rencontre/BUS_RENCONTRE_",
-      startingFrame: 50,
+      canvasWidth: 805,
+      canvasHeight: 453,
+      frameCount: 151,
+      frameFilePath: "/stares/STARES_",
+      startingFrame: 0,
     },
     intro:
       "Après avoir pris le bus, Anna et Carl discutent en chemin jusqu’à arriver devant une bouche de métro.",

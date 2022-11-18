@@ -8,8 +8,7 @@ export interface ScrollContextInterface {
   YAnimationScale: MotionValue<number>;
   animationTranslateRef: RefObject<HTMLDivElement>;
   YAnimationTranslate: MotionValue<number>;
-  containerScrollSectionRef: RefObject<HTMLElement>;
-  scrollSectionY: MotionValue<number>;
+
   scrollYGlobal: MotionValue<number>;
 }
 
@@ -21,14 +20,8 @@ export const ScrollProvider = ({ children }: { children?: ReactNode }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationScaleRef = useRef<HTMLDivElement>(null);
   const animationTranslateRef = useRef<HTMLDivElement>(null);
-  const containerScrollSectionRef = useRef<HTMLElement>(null);
 
   const { scrollY: scrollYGlobal } = useScroll();
-
-  const { scrollYProgress: scrollSectionY } = useScroll({
-    target: containerScrollSectionRef,
-    offset: ["start start", "end end"],
-  });
 
   const { scrollYProgress: YCanvas } = useScroll({
     target: containerRef,
@@ -54,8 +47,6 @@ export const ScrollProvider = ({ children }: { children?: ReactNode }) => {
         YAnimationScale,
         animationTranslateRef,
         YAnimationTranslate,
-        containerScrollSectionRef,
-        scrollSectionY,
         scrollYGlobal,
       }}
     >
