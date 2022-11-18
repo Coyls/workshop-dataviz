@@ -5,6 +5,7 @@ import { BusSection } from "../components/BusSection/busSection";
 import { ScrollSection } from "../components/scroll-section/scroll-section";
 import { Footer } from "../components/Footer/footer";
 import {CONTENT} from "./../public/data/sections";
+import { ConclusionText } from "../components/ConclusionText/conclusionText";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
           return <ScrollSection section={section} key={index}/>
         })
       }
+      <ConclusionText/>
       <BigStat />
       <Footer />
     </div>

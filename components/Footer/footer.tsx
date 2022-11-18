@@ -9,7 +9,7 @@ export function Footer(){
     const secondTier = SOURCES.slice(tier, tier*2)
     const thirdTier = SOURCES.slice(tier*2)
 
-    return <div className="flex flex-col mt-[250px]">
+    return <div className="flex flex-col mt-[100px]">
         <div className="pt-[61px] pb-[76px] px-[70px] bg-[#F7F7F7]">
             <span className="font-['Eyra-400ExtraLight'] uppercase leading-8">Sources</span>
             <div className="w-full flex gap-10">
