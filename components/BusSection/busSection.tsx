@@ -29,7 +29,7 @@ export function BusSection() {
       if (animationTranslateRef.current) {
         const VHHeight = animationTranslateRef.current.clientHeight;
         const distY = VHHeight;
-        const distX = 300;
+        const distX = 200;
         translateY.set(distY * val);
         translateX.set(-(distX * val));
       }

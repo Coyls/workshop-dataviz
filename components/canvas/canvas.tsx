@@ -112,7 +112,7 @@ export default function Canvas(props: CanvasProps) {
   }, [canvasRef, scrollYProgress]);
 
   return (
-    <div ref={canvasContainerRef} className="width-full relative ">
+    <div ref={canvasContainerRef} className="width-full relative  mt-56">
       <canvas ref={canvasRef} className={cls(className)}></canvas>
 
       <div className="hidden bottom-[-5px]"></div>
