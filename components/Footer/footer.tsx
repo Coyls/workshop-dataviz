@@ -11,7 +11,7 @@ export function Footer(){
     const secondTier = SOURCES.slice(tier, tier*2)
     const thirdTier = SOURCES.slice(tier*2)
 
-    return <div className="flex flex-col">
+    return <div className="flex flex-col mt-[250px]">
         <div className="pt-[61px] pb-[76px] px-[70px] bg-[#F7F7F7]">
             <span className="font-['Eyra-400ExtraLight'] uppercase leading-8">Sources</span>
             <div className="w-full flex gap-10">
@@ -39,12 +39,14 @@ export function Footer(){
             </div>
         </div>
         <div className="py-9 px-[70px] bg-[#141414] flex">
-            <div className="flex gap-10">
-                <Image
-                    src="/image/logoCCI.png"
-                    width={200}
-                    height={59}
-                    alt="Logo de la CCI" />
+            <div className="flex gap-10 items-center">
+                <div>
+                    <Image
+                        src="/image/logoCCI.png"
+                        width={120}
+                        height={36}
+                        alt="Logo de la CCI" />
+                </div>
                 <Image
                     src="/image/logoGobelins.png"
                     width={60}
