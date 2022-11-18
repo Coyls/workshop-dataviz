@@ -29,8 +29,8 @@ export function TextIntroSection({index, sectionName, title, children}: TextIntr
             strokeLinecap="round"
           />
         </svg>
-        <p className="mt-6 font-['Eyra-400Regular'] text-xl leading-7">
+        <div className="mt-6 font-['Eyra-400Regular'] text-xl leading-7">
           {children}
-        </p>
+        </div>
     </>
 }
