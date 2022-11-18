@@ -6,12 +6,48 @@ import { ScrollSection } from "../components/scroll-section/scroll-section";
 import { Footer } from "../components/Footer/footer";
 import { CONTENT } from "./../public/data/sections";
 import { ConclusionText } from "../components/ConclusionText/conclusionText";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
-
+import { useScroll } from "framer-motion";
+import { useScrollContext } from "../components/scroll-context.context";
 
 export default function Home() {
+
+  function getScrollInterval(id: number){
+    if(typeof window !== 'undefined'){
+      const section = document.getElementById('section-'+id);
+      const top = section?.offsetTop ?? 0;
+      const height = section?.offsetHeight ?? 0;
+      const bot = top + height;
+      return {top, bot}
+    }
+    return {top: 0, bot: 0}
+  }
+
+  function getCurrentBySection(){
+    const y = scrollYGlobal.get();
+    let id = 1;
+    CONTENT.map((section)=>{
+      const {top, bot} = getScrollInterval(section.index)
+      if(section.index == 4){
+        if((y >= top && y<= bot )|| y>bot)
+          id= section.index
+      }else{
+        if(y >= top && y<= bot)
+          id=section.index
+      }
+    })
+    return id;
+  }
+
   const [currentIndex, setCurrentIndex] = useState(1);
+  const { scrollYGlobal } = useScrollContext();
+
+  useEffect(() => {
+    return scrollYGlobal.onChange(() => {
+      setCurrentIndex(getCurrentBySection())
+    });
+  });
 
   return (<>
     <Head>

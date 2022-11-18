@@ -2,7 +2,7 @@ import React from 'react';
 import { HeaderNumero } from '../HeaderNumero/headerNumero';
 import SmoothCollapse from 'react-smooth-collapse';
 import cls from 'classnames';
-import Link from 'next/link';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 type HeaderItemProps = {
     title: string,
@@ -14,8 +14,7 @@ type HeaderItemProps = {
     children: any
   }
 export function HeaderItem({children, title, isDeployed, index, currentIndex, setCurrentIndex, isLast}: HeaderItemProps) {   
-    return <Link href={"#section-"+index} className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
-        onClick={()=>setCurrentIndex(index)}
+    return <AnchorLink href={"#section-"+index} className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
         style={{transition: 'opacity 500ms', WebkitTapHighlightColor: "transparent"}}
     >
         <div className='flex gap-4'>
@@ -30,5 +29,5 @@ export function HeaderItem({children, title, isDeployed, index, currentIndex, se
                 {children}
             </SmoothCollapse>
         </div>
-    </Link>
+    </AnchorLink>
 }
