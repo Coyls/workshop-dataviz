@@ -25,7 +25,9 @@ export default function TextScroll(props: TextScrollProps) {
           sectionName={section.smallTitle}
           title={section.bigTitle}
         >
-          {section.intro}
+          {section.intro.map((sentence : string, index : number)=>{
+            return <p key={index}>{sentence}</p>
+          })}
         </TextIntroSection>
       </TextSticky>    
       <TextSticky>
@@ -41,7 +43,9 @@ export default function TextScroll(props: TextScrollProps) {
           noStat={section.stat.noStat}
           legend={section.stat.legend}
         >
-          {section.stat.text}
+          {section.stat.text.map((sentence : string, index : number)=>{
+            return <p key={index}>{sentence}</p>
+          })}
         </TextStatSection>
       </TextSticky>
     </div>

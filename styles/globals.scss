@@ -16,6 +16,12 @@
   src: local("Hynings"), url("./fonts/HyningsHandwriting-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Eyra-200ExtraLight";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-200ExtraLight"), url("./fonts/Eyra/Eyra-200ExtraLight.otf") format("opentype");
+}
 
 @font-face {
   font-family: "Eyra-200Light";
@@ -64,6 +70,13 @@
   font-style: normal;
   font-weight: normal;
   src: local("Eyra-500ExtraBold"), url("./fonts/Eyra/Eyra-500ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eyra-700Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-700Bold"), url("./fonts/Eyra/Eyra-700Bold.otf") format("opentype");
 }
 
 @font-face {
