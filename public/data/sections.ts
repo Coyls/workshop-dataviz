@@ -1,4 +1,7 @@
+import { DialogAiderComprendre } from "../../components/DialogSVGs/dialogAiderComprendre"
+import { DialogHandicapMetro } from "../../components/DialogSVGs/dialogHandicapMetro"
 import { DialogLaRencontre } from "../../components/DialogSVGs/dialogLaRencontre"
+import { DialogQuotidiensDifferents } from "../../components/DialogSVGs/dialogQuotidiensDifferents"
 import { GraphButtons1 } from "../../components/GraphButtons1/graphButtons1"
 
 export const CONTENT = [
@@ -35,7 +38,7 @@ export const CONTENT = [
             startingFrame: 50
         },
         intro: "Anna arrive tant bien que mal à rentrer dans le bus, mais les personnes comme Carl ne sont pas toujours là lorsqu’il y a des problèmes.",
-        dialog: DialogLaRencontre ,
+        dialog: DialogAiderComprendre ,
         stat:{
             title: "Quel est le nombre de personnes à handicap moteur qui prennent le bus en Île de France par jour ?",
             text: "À Paris, ce sont plus de 175 000 personnes atteintes de handicap moteur qui ont besoin d’utiliser le bus quotidiennement. Il est donc primordial de leur en faciliter l’accès et l’utilisation.",
@@ -54,7 +57,7 @@ export const CONTENT = [
             startingFrame: 50
         },
         intro: "Après avoir pris le bus, Anna et Carl discutent en chemin jusqu’à arriver devant une bouche de métro.",
-        dialog: DialogLaRencontre ,
+        dialog: DialogHandicapMetro ,
         stat:{
             title: "Sur les 15 lignes du métro parisien, combien sont accessibles pour les personnes atteintes d’handicap moteur ?",
             text: "Le métro parisien pose un véritable soucis d’accessibilité car les infrastructure sont vieillissantes. Dans la majorité des lignes, l’absence d’ascenseur ne permet pas aux personnes à handicap moteur d’accéder au métro.",
@@ -74,7 +77,7 @@ export const CONTENT = [
             startingFrame: 50
         },
         intro: "Carl décide de poursuivre son trajet aux côtés d’Anna, curieux du ressenti qu’elle partage avec lui.",
-        dialog: DialogLaRencontre ,
+        dialog: DialogQuotidiensDifferents ,
         stat:{
             title: "Quel est le ressenti des personnes à handicap moteur par rapport aux transports en commun ?",
             text: "On constate une évolution des dispositifs mis en place par les différentes AOM*, et une vraie prise de conscience génrale. Malgré ça, les personnes concernées par l’accessibilité de la mobilité restent en grande partie insatisfaites par les infrastructures et solutions proposées.",
