@@ -27,13 +27,17 @@ export default function TextScroll(props: TextScrollProps) {
         </TextIntroSection>
       </TextSticky>
       <TextSticky>
-        <section.dialog />
+        <div className="svg-container">
+          <section.dialog />
+        </div>
       </TextSticky>
       <TextSticky relative>
       <TextStatSection
           title={section.stat.title}
           statNumber={section.stat.statNumber}
           statLabel={section.stat.statLabel}
+          noStat={section.stat.noStat}
+          legend={section.stat.lengend}
         >
           {section.stat.text}
         </TextStatSection>

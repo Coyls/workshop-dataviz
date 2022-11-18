@@ -48,8 +48,8 @@ export const ScrollSection = ({ section }: any) => {
 
       <TextScroll
         scrollYProgress={scrollSectionY}
-        className="w-[28vw] h-full"
         section={section}
+        className="w-[28vw] h-full"
       />
     </section>
   );
