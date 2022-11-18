@@ -23,7 +23,6 @@ export function BusSection() {
     const updateScale = (val: number) => {
       scale.set(val);
       val <= 0.5 ? opacity.set(0) : opacity.set(1);
-      console.log("val", val);
     };
 
     const updateTranslate = (val: number) => {
