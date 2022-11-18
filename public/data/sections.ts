@@ -78,7 +78,7 @@ export const CONTENT = [
         stat:{
             title: "Quel est le ressenti des personnes à handicap moteur par rapport aux transports en commun ?",
             text: "On constate une évolution des dispositifs mis en place par les différentes AOM*, et une vraie prise de conscience génrale. Malgré ça, les personnes concernées par l’accessibilité de la mobilité restent en grande partie insatisfaites par les infrastructures et solutions proposées.",
-            legend: "*Autorités Organisatrices de la Mobilité",
+            legend: "* Autorités Organisatrices de la Mobilité",
             statNumber: {number: "35%", isYellow: true},
             statLabel: "La part de voyageurs handicapés qui sont satisfaits de l’évolution",
         }

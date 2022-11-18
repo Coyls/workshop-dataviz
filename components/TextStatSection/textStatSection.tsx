@@ -13,6 +13,8 @@ type TextStatSectionProps = {
 
 export function TextStatSection({title, statNumber, statLabel,noStat, children, legend}: TextStatSectionProps){
 
+    console.log(legend)
+
     return <>
             <div className="font-['Eyra-400Bold'] text-[28px] leading-9">
                 {title}
