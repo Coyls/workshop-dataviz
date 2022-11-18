@@ -8,18 +8,18 @@ export interface GraphRencontreSvgProps {
 export const GraphRencontreSvg = (props: GraphRencontreSvgProps) => {
   const { visible } = props;
 
-  const className = "absolute bottom-0";
+  const className = "absolute bottom-0 w-full h-full";
 
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 1 }}
         >
           <svg
-            className={cls(className, "z-[-10] ")}
+            className={cls(className, "z-[-10]")}
             width="804"
             height="634"
             viewBox="0 0 804 634"
