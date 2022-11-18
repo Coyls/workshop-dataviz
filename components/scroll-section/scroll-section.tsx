@@ -4,7 +4,7 @@ import Canvas from "../canvas/canvas";
 import { useScrollContext } from "../scroll-context.context";
 import TextScroll from "../text-scroll/text-scroll";
 
-export const ScrollSection = () => {
+export const ScrollSection = ({section}: any) => {
   const { containerScrollSectionRef, scrollSectionY, YAnimationScale } =
     useScrollContext();
 
@@ -35,13 +35,13 @@ export const ScrollSection = () => {
           className="flex flex-col h-full justify-center"
         >
           <Canvas
-            canvasWidth={2560}
-            canvasHeight={1440}
-            frameCount={141}
-            frameFilePath="/bus-rencontre/BUS_RENCONTRE_"
+            canvasWidth={section.canvas.canvasWidth}
+            canvasHeight={section.canvas.canvasHeight}
+            frameCount={section.canvas.frameCount}
+            frameFilePath={section.canvas.frameFilePath}
             scrollYProgress={scrollSectionY}
             className="w-full"
-            startingFrame={50}
+            startingFrame={section.canvas.startingFrame}
           />
         </motion.div>
       </div>
@@ -49,6 +49,7 @@ export const ScrollSection = () => {
       <TextScroll
         scrollYProgress={scrollSectionY}
         className="w-[595px] h-full"
+        section={section}
       />
     </section>
   );
