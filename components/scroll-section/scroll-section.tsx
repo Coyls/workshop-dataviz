@@ -4,7 +4,13 @@ import Canvas from "../canvas/canvas";
 import { useScrollContext } from "../scroll-context.context";
 import TextScroll from "../text-scroll/text-scroll";
 
-export const ScrollSection = ({ section }: any) => {
+export interface ScrollSectionProps {
+  section: any;
+}
+
+export const ScrollSection = (props: ScrollSectionProps) => {
+  const { section } = props;
+
   const { YAnimationScale } = useScrollContext();
 
   const containerScrollSectionRef = useRef<HTMLElement>(null);

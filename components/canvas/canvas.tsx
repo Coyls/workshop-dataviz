@@ -1,7 +1,7 @@
 import cls from "classnames";
 import { MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import styles from "./canvas.module.scss";
+import { GraphRencontreSvg } from "../graph-svg/graph-rencontre-svg";
 
 export interface CanvasProps {
   scrollYProgress: MotionValue<number>;
@@ -27,6 +27,7 @@ export default function Canvas(props: CanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
+  const [graphVisibility, setGraphVisibility] = useState<boolean>(false);
 
   const imageLoads: HTMLImageElement[] = [];
 
@@ -88,6 +89,9 @@ export default function Canvas(props: CanvasProps) {
 
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
+        console.log("frameIndex", frameIndex);
+        setGraphVisibility(frameIndex >= 150);
+        console.log("graphVisibility", graphVisibility);
         requestAnimationFrame(() => updateImage(frameIndex));
       }
     };
@@ -101,6 +105,10 @@ export default function Canvas(props: CanvasProps) {
   }, [canvasRef, scrollYProgress]);
 
   return (
-    <canvas ref={canvasRef} className={cls(styles.canvas, className)}></canvas>
+    <div className="width-full relative">
+      <canvas ref={canvasRef} className={cls(className)}></canvas>
+
+      <GraphRencontreSvg visible={graphVisibility} />
+    </div>
   );
 }
