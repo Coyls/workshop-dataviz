@@ -4,6 +4,8 @@ import { HeaderNumero } from "../HeaderNumero/headerNumero";
 import { Highlighter } from "../Highlighter/hightlighter";
 import TextSticky from "./text-sticky";
 import styles from './text-scroll.module.css'
+import { TextIntroSection } from "../TextIntroSection/textIntroSection";
+import { TextStatSection } from "../TextStatSection/textStatSection";
 export interface TextScrollProps {
   scrollYProgress: MotionValue<number>;
   className?: string;
@@ -17,31 +19,16 @@ export default function TextScroll(props: TextScrollProps) {
   return (
     <div className={className}>
       <TextSticky>
-        <HeaderNumero>01</HeaderNumero>
-        <span className="font-['Eyra-400Light'] text-xl uppercase text-gray-700 mt-5">LA RENCONTRE</span>
-        <h3 className="font-['Eyra-400Bold'] text-[28px] mt-1 mb-5 leading-9">
-          Monter dans un bus quand on est handicapé moteur, une épreuve ?
-        </h3>
-        <svg
-          width="82"
-          height="17"
-          viewBox="0 0 82 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <TextIntroSection
+          index={1}
+          sectionName="LA RENCONTRE"
+          title="Monter dans un bus quand on est handicapé moteur, une épreuve ?"
         >
-          <path
-            d="M3 10.7653C9.14221 7.35633 12.7664 5.82591 18.9542 3.9057C27.8399 0.429399 19.6122 10.4171 22.145 13.5213C23.5484 15.2412 38.9413 -1.06107 42.9983 3.96695C43.9656 6.60908 41.5097 12.6182 45.7871 13.5213C50.1296 14.4382 54.6029 14.0638 58.6947 12.1739C65.1076 9.21204 71.6044 3.59947 79 3.59947"
-            stroke="#ECD6F5"
-            strokeWidth="5"
-            strokeLinecap="round"
-          />
-        </svg>
-        <p className="text-2xl mt-6 font-[Eyra-400Light] text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet
           non curabitur gravida arcu ac tortor dignissim. Nibh praesent
           tristique magna sit.
-        </p>
+        </TextIntroSection>
       </TextSticky>
       <TextSticky>
         <svg
@@ -122,21 +109,16 @@ export default function TextScroll(props: TextScrollProps) {
         </svg>
       </TextSticky>
       <TextSticky relative>
-        <div className="font-['Eyra-400Bold'] text-[28px] leading-9">
-          L’évolution <Highlighter>du nombre d’arrêts</Highlighter> de bus <Highlighter>accessibles</Highlighter> en Île-de-France  
-        </div>
-        <div className="text-2xl mt-3.5 mb-5 font-[Eyra-400Light] text-xl">
+      <TextStatSection
+          title={<>
+            L’évolution <Highlighter>du nombre d’arrêts</Highlighter> de bus <Highlighter>accessibles</Highlighter> en Île-de-France
+          </>
+          }
+          statNumber={433}
+          statLabel={"arrêts équipés en 2017"}
+        >
           Id diam vel quam elementum pulvinar etiam. Eros in cursus turpis massa. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Sed faucibus turpis in eu mi bibendum neque egestas congue.
-        </div>
-        <div className={styles.arrow}/>
-        <div className="flex items-center">
-          <div className={cls(styles.highlight, "flex justify-center items-center")}>
-            <div className="text-[#141414] text-5xl font-['Eyra-400Bold'] pr-[8px]">433</div>
-          </div>
-          <div className="font-['Eyra-400Light'] text-2xl uppercase text-gray-700">
-            arrêts équipés en 2017
-          </div>
-        </div>
+        </TextStatSection>
       </TextSticky>
     </div>
   );

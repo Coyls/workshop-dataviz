@@ -1,0 +1,17 @@
+
+.arrow {
+    background: url('./../../public/image/bigStat-arrow.svg') no-repeat center;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    transform: scaleX(-1);
+}
+
+
+
+.highlight {
+    background: url('./../../public/image/textScroll-highlight.svg') no-repeat center;
+    background-size: contain;
+    width: 130px;
+    height: 70px;
+}
