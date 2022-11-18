@@ -16,6 +16,14 @@
   src: local("Hynings"), url("./fonts/HyningsHandwriting-Regular.ttf") format("truetype");
 }
 
+
+@font-face {
+  font-family: "Eyra-200Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Eyra-200Light"), url("./fonts/Eyra/Eyra-200Light.otf") format("opentype");
+}
+
 @font-face {
   font-family: "Eyra-400ExtraLight";
   font-style: normal;
@@ -121,3 +129,7 @@ a {
   }
 }
 
+
+.svg-container > svg{
+  width: 100%;
+}
