@@ -37,7 +37,7 @@ export const ScrollSection = (props: ScrollSectionProps) => {
 
   return (
     <section
-      id={"section-"+section.index}
+      id={"section-" + section.index}
       ref={containerScrollSectionRef}
       className="flex flex-row h-[300vh] w-screen relative mt-1 px-16 justify-between"
     >
@@ -55,6 +55,7 @@ export const ScrollSection = (props: ScrollSectionProps) => {
             scrollYProgress={scrollSectionY}
             className="w-full"
             startingFrame={section.canvas.startingFrame}
+            graph={section.canvas.graph}
           />
         </motion.div>
       </div>

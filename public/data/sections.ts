@@ -16,18 +16,23 @@ export const CONTENT = [
       frameFilePath: "/bus-rencontre/BUS_RENCONTRE_",
       startingFrame: 50,
       hasButton: GraphButtons1,
+      graph: {
+        src: "/graph-rencontre.png",
+        offset: "bottom-[-5px]",
+        frame: 150,
+      },
     },
-    intro:[
+    intro: [
       "Carl, un jeune collégien de 14 ans se rend comme tous les matins à son arrêt de bus.",
-      "Il rencontre Anna, une adulte de 35 ans en situation de handicap moteur."
+      "Il rencontre Anna, une adulte de 35 ans en situation de handicap moteur.",
     ],
     dialog: DialogLaRencontre,
     stat: {
       text: [
         "La loi du 11 février 2005 stipule que les personnes handicapées doivent être en mesure de monter et descendre des véhicules routiers ou des rames. La réalité elle, est bien différente.",
-        "Cette situation peut amener les personnes handicapées à être mal à l’aise et stressées à l’idée de prendre le bus."
+        "Cette situation peut amener les personnes handicapées à être mal à l’aise et stressées à l’idée de prendre le bus.",
       ],
-      statNumber: { number: 433},
+      statNumber: { number: 433 },
       statLabel: "arrêts équipés en 2017",
     },
   },
@@ -41,11 +46,21 @@ export const CONTENT = [
       frameCount: 151,
       frameFilePath: "/bus-topdown/BUS_TOPDOWN_",
       startingFrame: 0,
+      graph: {
+        src: "/graph-roof.png",
+        offset: "bottom-0",
+        frame: 150,
+      },
     },
-    intro:["Anna arrive tant bien que mal à rentrer dans le bus, mais les personnes comme Carl ne sont pas toujours là lorsqu’il y a des problèmes."],
+    intro: [
+      "Anna arrive tant bien que mal à rentrer dans le bus, mais les personnes comme Carl ne sont pas toujours là lorsqu’il y a des problèmes.",
+    ],
     dialog: DialogAiderComprendre,
-    stat: { 
-      text: ["À Paris, ce sont plus de 175 000 personnes atteintes de handicap moteur qui ont besoin d’utiliser le bus quotidiennement. ","Il est donc primordial de leur en faciliter l’accès et l’utilisation."],
+    stat: {
+      text: [
+        "À Paris, ce sont plus de 175 000 personnes atteintes de handicap moteur qui ont besoin d’utiliser le bus quotidiennement. ",
+        "Il est donc primordial de leur en faciliter l’accès et l’utilisation.",
+      ],
       noStat: true,
     },
   },
@@ -60,18 +75,28 @@ export const CONTENT = [
       frameCount: 151,
       frameFilePath: "/stares/STARES_",
       startingFrame: 0,
+      graph: {
+        src: "/graph-stares.png",
+        offset: "bottom-[-110px]",
+        frame: 150,
+      },
     },
-    intro:["Après avoir pris le bus, Anna et Carl discutent en chemin jusqu’à arriver devant une bouche de métro."],
+    intro: [
+      "Après avoir pris le bus, Anna et Carl discutent en chemin jusqu’à arriver devant une bouche de métro.",
+    ],
     dialog: DialogHandicapMetro,
     stat: {
       title:
         "Sur les 15 lignes du métro parisien, combien sont accessibles pour les personnes atteintes d’handicap moteur ?",
-      text: ["Le métro parisien pose un véritable soucis d’accessibilité car les infrastructure sont vieillissantes."," Dans la majorité des lignes, l’absence d’ascenseur ne permet pas aux personnes à handicap moteur d’accéder au métro."],
+      text: [
+        "Le métro parisien pose un véritable soucis d’accessibilité car les infrastructure sont vieillissantes.",
+        " Dans la majorité des lignes, l’absence d’ascenseur ne permet pas aux personnes à handicap moteur d’accéder au métro.",
+      ],
       statNumber: { number: 1, isYellow: true },
       statLabel: "1 seule ligne respecte toutes les normes d’accessibilité",
     },
   },
-  {
+  /* {
     index: 4,
     smallTitle: "Des quotidiens différents ?",
     bigTitle: "L’accès et l’usage quotidien des transports, ca s’améliore ?",
@@ -81,17 +106,27 @@ export const CONTENT = [
       frameCount: 141,
       frameFilePath: "/bus-rencontre/BUS_RENCONTRE_",
       startingFrame: 50,
+      graph: {
+        src: "/graph-rencontre.png",
+        offset: "bottom-[-5px]",
+        frame: 150,
+      },
     },
-    intro:["Carl décide de poursuivre son trajet aux côtés d’Anna, curieux du ressenti qu’elle partage avec lui."],
+    intro: [
+      "Carl décide de poursuivre son trajet aux côtés d’Anna, curieux du ressenti qu’elle partage avec lui.",
+    ],
     dialog: DialogQuotidiensDifferents,
     stat: {
       title:
         "Quel est le ressenti des personnes à handicap moteur par rapport aux transports en commun ?",
-      text: ["On constate une évolution des dispositifs mis en place par les différentes AOM*, et une vraie prise de conscience génrale."," Malgré ça, les personnes concernées par l’accessibilité de la mobilité restent en grande partie insatisfaites par les infrastructures et solutions proposées."],
+      text: [
+        "On constate une évolution des dispositifs mis en place par les différentes AOM*, et une vraie prise de conscience génrale.",
+        " Malgré ça, les personnes concernées par l’accessibilité de la mobilité restent en grande partie insatisfaites par les infrastructures et solutions proposées.",
+      ],
       legend: "* Autorités Organisatrices de la Mobilité",
       statNumber: { number: "35%", isYellow: true },
       statLabel:
         "La part de voyageurs handicapés qui sont satisfaits de l’évolution",
     },
-  },
+  }, */
 ];

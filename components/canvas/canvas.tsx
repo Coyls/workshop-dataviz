@@ -11,6 +11,11 @@ export interface CanvasProps {
   className?: string;
   frameCount: number;
   startingFrame: number;
+  graph?: {
+    src: string;
+    offset?: string;
+    frame: number;
+  };
 }
 
 export default function Canvas(props: CanvasProps) {
@@ -22,6 +27,7 @@ export default function Canvas(props: CanvasProps) {
     canvasHeight,
     frameCount,
     startingFrame,
+    graph,
   } = props;
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -91,7 +97,8 @@ export default function Canvas(props: CanvasProps) {
 
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
-        setGraphVisibility(frameIndex >= 150);
+        console.log("frameIndex", frameIndex);
+        if (graph) setGraphVisibility(frameIndex >= graph.frame);
         requestAnimationFrame(() => updateImage(frameIndex));
       }
     };
@@ -108,11 +115,16 @@ export default function Canvas(props: CanvasProps) {
     <div ref={canvasContainerRef} className="width-full relative ">
       <canvas ref={canvasRef} className={cls(className)}></canvas>
 
-      <GraphSvg
-        visible={graphVisibility}
-        src="/graph-rencontre.png"
-        offset="bottom-[-5px]"
-      />
+      <div className="hidden bottom-[-5px]"></div>
+      <div className="hidden bottom-[-110px]"></div>
+
+      {graph && (
+        <GraphSvg
+          visible={graphVisibility}
+          src={graph?.src as string}
+          offset={graph?.offset}
+        />
+      )}
     </div>
   );
 }

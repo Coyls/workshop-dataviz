@@ -12,7 +12,7 @@ module.exports = {
       },
       fontFamily: {
         'family-logo': 'Best School',
-      }
+      },
     },
   },
   plugins: [],
