@@ -8,8 +8,8 @@ export function IntroSection() {
         <div className="ml-28 w-2/3 flex flex-col gap-10">
             <div className="relative">
                 <span className="font-[Eyra-500ExtraBold] text-[56px] leading-tight">
-                Handicapés moteurs et accès aux transports en commun, 
-                <Highlighter> un enjeu pour l’autonomie ?</Highlighter>
+                    Handicapés moteurs et accès aux transports en commun, 
+                    <Highlighter> <span className="whitespace-nowrap"> un enjeu pour l’autonomie ? </span> </Highlighter>
                 </span>
                 <div className="absolute -left-[150px] top-1/2 flex flex-col items-end ">
                     <IntroSectionArrow />

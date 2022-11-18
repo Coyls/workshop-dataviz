@@ -14,7 +14,7 @@ type HeaderItemProps = {
     children: any
   }
 export function HeaderItem({children, title, isDeployed, index, currentIndex, setCurrentIndex, isLast}: HeaderItemProps) {   
-    return <AnchorLink href={"#section-"+index} className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
+    return <AnchorLink href={"#section-"+index} offset={-50} className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
         style={{transition: 'opacity 500ms', WebkitTapHighlightColor: "transparent"}}
     >
         <div className='flex gap-4'>
