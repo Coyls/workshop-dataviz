@@ -6,9 +6,13 @@ import styles from "./header.module.css";
 import cls from "classnames";
 import { useScrollContext } from "../scroll-context.context";
 
-export function Header() {
+type HeaderProps = {
+  currentIndex: number,
+  setCurrentIndex: Function,
+}
+
+export function Header({currentIndex, setCurrentIndex}:HeaderProps) {
   const [isDeployed, setIsDeployed] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(1);
   const [refScroll, setRefScroll] = useState<number>(0);
 
   const { scrollYGlobal } = useScrollContext();
@@ -22,10 +26,10 @@ export function Header() {
     if (toTop) {
       if (refScroll === 0) setRefScroll(currentY);
 
-      if (refScroll - currentY > 500) {
+      if (refScroll - currentY > 500 || currentY < 50) {
         setIsDeployed(true);
       }
-    } else if (currentY > 150 && currentY > previousY) {
+    } else if (currentY > 50 && currentY > previousY) {
       if (refScroll !== 0) setRefScroll(0);
 
       setIsDeployed(false);

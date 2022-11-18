@@ -6,24 +6,32 @@ import { ScrollSection } from "../components/scroll-section/scroll-section";
 import { Footer } from "../components/Footer/footer";
 import { CONTENT } from "./../public/data/sections";
 import { ConclusionText } from "../components/ConclusionText/conclusionText";
+import { useState } from "react";
+import Head from "next/head";
 
 
 export default function Home() {
-  return (
-    <div className="custom-home-bg flex flex-col">
-      <Header />
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  return (<>
+    <Head>
+      <title>Siah.</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <div className="custom-home-bg flex flex-col scroll-smooth">
+      <Header 
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      />
       <IntroSection />
       <BusSection />
-      {/* <ScrollSection section={CONTENT[0]} />
-      <ScrollSection section={CONTENT[1]} />
-      <ScrollSection section={CONTENT[2]} /> */}
-      {CONTENT.map((section, index) => {
-        console.log(section);
-        return <ScrollSection section={section} key={index} />;
+      {CONTENT.map((section) => {
+        return <ScrollSection section={section} key={section.index} />;
       })}
       <ConclusionText/>
       <BigStat />
       <Footer />
     </div>
+  </>
   );
 }

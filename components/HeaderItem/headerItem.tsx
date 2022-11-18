@@ -2,6 +2,7 @@ import React from 'react';
 import { HeaderNumero } from '../HeaderNumero/headerNumero';
 import SmoothCollapse from 'react-smooth-collapse';
 import cls from 'classnames';
+import Link from 'next/link';
 
 type HeaderItemProps = {
     title: string,
@@ -13,9 +14,9 @@ type HeaderItemProps = {
     children: any
   }
 export function HeaderItem({children, title, isDeployed, index, currentIndex, setCurrentIndex, isLast}: HeaderItemProps) {   
-    return <div className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
+    return <Link href={"#section-"+index} className={cls('flex-1 flex flex-col self-center justify-center h-full cursor-pointer',currentIndex != index && 'opacity-25' )}
         onClick={()=>setCurrentIndex(index)}
-        style={{transition: 'opacity 500ms'}}
+        style={{transition: 'opacity 500ms', WebkitTapHighlightColor: "transparent"}}
     >
         <div className='flex gap-4'>
             <HeaderNumero>0{index}</HeaderNumero>
@@ -29,5 +30,5 @@ export function HeaderItem({children, title, isDeployed, index, currentIndex, se
                 {children}
             </SmoothCollapse>
         </div>
-    </div>
+    </Link>
 }
