@@ -10,7 +10,7 @@ type TextIntroSection = {
 
 export function TextIntroSection({index, sectionName, title, children}: TextIntroSection){
     return <>
-        <HeaderNumero>0{index}</HeaderNumero>
+        <HeaderNumero big>0{index}</HeaderNumero>
         <span className="font-['Eyra-400Light'] text-xl uppercase text-gray-700 mt-5">{sectionName}</span>
         <h3 className="font-['Eyra-400Bold'] text-[28px] mt-1 mb-5 leading-9">
           {title}

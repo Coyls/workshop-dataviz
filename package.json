@@ -19,6 +19,7 @@
     "framer-motion": "^7.6.7",
     "next": "13.0.3",
     "react": "18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "18.2.0",
     "react-lines-ellipsis": "^0.15.3",
     "react-parallax": "^3.5.1",
@@ -26,6 +27,7 @@
     "typescript": "4.8.4"
   },
   "devDependencies": {
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-lines-ellipsis": "^0.15.1",
     "autoprefixer": "^10.4.13",
     "cz-conventional-changelog": "^3.3.0",

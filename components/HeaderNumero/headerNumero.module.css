@@ -8,3 +8,12 @@
     font-size: 30px;
     line-height: 35.4px;
 }
+
+.highlightBig{
+    background: url('./../../public/image/header-highlight.svg') no-repeat center;
+    width: 140px;
+    background-size: contain;
+    font-family: 'Hynings', serif;
+    font-size: 64px;
+    line-height: 70px;
+}
