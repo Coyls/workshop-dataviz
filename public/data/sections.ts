@@ -1,4 +1,7 @@
+import { DialogAiderComprendre } from "../../components/DialogSVGs/dialogAiderComprendre";
+import { DialogHandicapMetro } from "../../components/DialogSVGs/dialogHandicapMetro";
 import { DialogLaRencontre } from "../../components/DialogSVGs/dialogLaRencontre";
+import { DialogQuotidiensDifferents } from "../../components/DialogSVGs/dialogQuotidiensDifferents";
 import { GraphButtons1 } from "../../components/GraphButtons1/graphButtons1";
 
 export const CONTENT = [
@@ -24,7 +27,6 @@ export const CONTENT = [
       statLabel: "arrêts équipés en 2017",
     },
   },
-
   {
     index: 2,
     smallTitle: "Aider c'est comprendre",
@@ -38,7 +40,7 @@ export const CONTENT = [
     },
     intro:
       "Anna arrive tant bien que mal à rentrer dans le bus, mais les personnes comme Carl ne sont pas toujours là lorsqu’il y a des problèmes.",
-    dialog: DialogLaRencontre,
+    dialog: DialogAiderComprendre,
     stat: {
       title:
         "Quel est le nombre de personnes à handicap moteur qui prennent le bus en Île de France par jour ?",
@@ -60,7 +62,7 @@ export const CONTENT = [
     },
     intro:
       "Après avoir pris le bus, Anna et Carl discutent en chemin jusqu’à arriver devant une bouche de métro.",
-    dialog: DialogLaRencontre,
+    dialog: DialogHandicapMetro,
     stat: {
       title:
         "Sur les 15 lignes du métro parisien, combien sont accessibles pour les personnes atteintes d’handicap moteur ?",
@@ -82,12 +84,12 @@ export const CONTENT = [
     },
     intro:
       "Carl décide de poursuivre son trajet aux côtés d’Anna, curieux du ressenti qu’elle partage avec lui.",
-    dialog: DialogLaRencontre,
+    dialog: DialogQuotidiensDifferents,
     stat: {
       title:
         "Quel est le ressenti des personnes à handicap moteur par rapport aux transports en commun ?",
       text: "On constate une évolution des dispositifs mis en place par les différentes AOM*, et une vraie prise de conscience génrale. Malgré ça, les personnes concernées par l’accessibilité de la mobilité restent en grande partie insatisfaites par les infrastructures et solutions proposées.",
-      legend: "*Autorités Organisatrices de la Mobilité",
+      legend: "* Autorités Organisatrices de la Mobilité",
       statNumber: { number: "35%", isYellow: true },
       statLabel:
         "La part de voyageurs handicapés qui sont satisfaits de l’évolution",

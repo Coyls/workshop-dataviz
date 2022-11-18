@@ -15,6 +15,8 @@ export default function TextScroll(props: TextScrollProps) {
 
   const sections = ["bg-red-600", "bg-yellow-600", "bg-blue-600"];
 
+  console.log(section.stat.legend);
+
   return (
     <div className={className}>
       <TextSticky>
@@ -25,7 +27,7 @@ export default function TextScroll(props: TextScrollProps) {
         >
           {section.intro}
         </TextIntroSection>
-      </TextSticky>
+      </TextSticky>    
       <TextSticky>
         <div className="svg-container">
           <section.dialog />
@@ -37,7 +39,7 @@ export default function TextScroll(props: TextScrollProps) {
           statNumber={section.stat.statNumber}
           statLabel={section.stat.statLabel}
           noStat={section.stat.noStat}
-          legend={section.stat.lengend}
+          legend={section.stat.legend}
         >
           {section.stat.text}
         </TextStatSection>
