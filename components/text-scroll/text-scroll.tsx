@@ -7,15 +7,13 @@ import TextSticky from "./text-sticky";
 export interface TextScrollProps {
   scrollYProgress: MotionValue<number>;
   className?: string;
-  section: any
+  section: any;
 }
 
 export default function TextScroll(props: TextScrollProps) {
   const { className = "", scrollYProgress, section } = props;
 
   const sections = ["bg-red-600", "bg-yellow-600", "bg-blue-600"];
-
-  console.log(section.stat.legend);
 
   return (
     <div className={className}>
@@ -25,26 +23,26 @@ export default function TextScroll(props: TextScrollProps) {
           sectionName={section.smallTitle}
           title={section.bigTitle}
         >
-          {section.intro.map((sentence : string, index : number)=>{
-            return <p key={index}>{sentence}</p>
+          {section.intro.map((sentence: string, index: number) => {
+            return <p key={index}>{sentence}</p>;
           })}
         </TextIntroSection>
-      </TextSticky>    
+      </TextSticky>
       <TextSticky>
         <div className="svg-container">
           <section.dialog />
         </div>
       </TextSticky>
       <TextSticky relative>
-      <TextStatSection
+        <TextStatSection
           title={section.stat.title}
           statNumber={section.stat.statNumber}
           statLabel={section.stat.statLabel}
           noStat={section.stat.noStat}
           legend={section.stat.legend}
         >
-          {section.stat.text.map((sentence : string, index : number)=>{
-            return <p key={index}>{sentence}</p>
+          {section.stat.text.map((sentence: string, index: number) => {
+            return <p key={index}>{sentence}</p>;
           })}
         </TextStatSection>
       </TextSticky>

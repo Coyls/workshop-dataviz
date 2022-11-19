@@ -48,6 +48,8 @@ export default function Canvas(props: CanvasProps) {
     for (let i = 0; i < 50; i++) {
       imageLoads.push(lastFrame);
     }
+
+    console.log("imageLoads", imageLoads);
   };
 
   const preloadImages = () => {
@@ -101,14 +103,14 @@ export default function Canvas(props: CanvasProps) {
     let frameIndex = 0;
     const onScroll = () => {
       const percentScroll = scrollYProgress.get();
-      const scrollFraction = percentScroll * (frameCount - 1);
+      const scrollFraction = percentScroll * (imageLoads.length - 1);
+
       const frameIndexTarget = Math.min(Math.ceil(scrollFraction));
       frameIndex += (frameIndexTarget - frameIndex) * 0.6;
       frameIndex = Math.round(frameIndex);
 
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
-        console.log("frameIndex", frameIndex);
         if (graph) setGraphVisibility(frameIndex >= graph.frame);
         requestAnimationFrame(() => updateImage(frameIndex));
       }
