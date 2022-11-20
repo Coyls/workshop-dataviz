@@ -7,11 +7,11 @@ import cls from "classnames";
 import { useScrollContext } from "../scroll-context.context";
 
 type HeaderProps = {
-  currentIndex: number,
-  setCurrentIndex: Function,
-}
+  currentIndex: number;
+  setCurrentIndex: Function;
+};
 
-export function Header({currentIndex, setCurrentIndex}:HeaderProps) {
+export function Header({ currentIndex, setCurrentIndex }: HeaderProps) {
   const [isDeployed, setIsDeployed] = useState(true);
   const [refScroll, setRefScroll] = useState<number>(0);
 
@@ -78,12 +78,11 @@ export function Header({currentIndex, setCurrentIndex}:HeaderProps) {
             index={3}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
-            isLast
           >
             Le labyrinthe à escalier, comment accéder au métro <br />{" "}
             <Highlighter> en toute sécurité ?</Highlighter>
           </HeaderItem>
-          {/* <HeaderItem
+          <HeaderItem
             title="Des quotidiens différents ?"
             isDeployed={isDeployed}
             index={4}
@@ -93,7 +92,7 @@ export function Header({currentIndex, setCurrentIndex}:HeaderProps) {
           >
             L’autonomie ca s’invente pas, <br />{" "}
             <Highlighter> ca se vit !</Highlighter>
-          </HeaderItem> */}
+          </HeaderItem>
         </div>
       </div>
       <div className="h-[200px]" />

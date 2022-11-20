@@ -2,7 +2,8 @@ import { DialogAiderComprendre } from "../../components/DialogSVGs/dialogAiderCo
 import { DialogHandicapMetro } from "../../components/DialogSVGs/dialogHandicapMetro";
 import { DialogLaRencontre } from "../../components/DialogSVGs/dialogLaRencontre";
 import { DialogQuotidiensDifferents } from "../../components/DialogSVGs/dialogQuotidiensDifferents";
-import { GraphButtons1 } from "../../components/GraphButtons1/graphButtons1";
+import { GraphButtonsBus } from "../../components/GraphButtonsBus/graphButtonsBus";
+import { GraphType } from "../../components/buttons-provider/buttonts-provider";
 
 export const CONTENT = [
   {
@@ -15,11 +16,18 @@ export const CONTENT = [
       frameCount: 171,
       frameFilePath: "/bus-rencontre/BUS_RENCONTRE_",
       startingFrame: 50,
-      hasButton: GraphButtons1,
       graph: {
-        src: "/graph-rencontre.png",
+        src: "/graph-time.png",
         offset: "bottom-[-5px]",
         frame: 150,
+        buttons: GraphButtonsBus,
+        srcs: {
+          [GraphType.TIME]: { src: "/graph-time.png", offset: "bottom-[15px]" },
+          [GraphType.DISTANCE]: {
+            src: "/graph-distance.png",
+            offset: "bottom-[20px]",
+          },
+        },
       },
     },
     intro: [
@@ -48,8 +56,10 @@ export const CONTENT = [
       startingFrame: 0,
       graph: {
         src: "/graph-roof.png",
-        offset: "bottom-0",
+        offset: "bottom-[30px]",
         frame: 150,
+        buttons: null,
+        srcs: null,
       },
     },
     intro: [
@@ -77,8 +87,10 @@ export const CONTENT = [
       startingFrame: 0,
       graph: {
         src: "/graph-stares.png",
-        offset: "bottom-[-110px]",
+        offset: "bottom-[-88px]",
         frame: 150,
+        buttons: null,
+        srcs: null,
       },
     },
     intro: [
@@ -96,20 +108,22 @@ export const CONTENT = [
       statLabel: "1 seule ligne respecte toutes les normes d’accessibilité",
     },
   },
-  /* {
+  {
     index: 4,
     smallTitle: "Des quotidiens différents ?",
     bigTitle: "L’accès et l’usage quotidien des transports, ca s’améliore ?",
     canvas: {
-      canvasWidth: 2560,
-      canvasHeight: 1440,
-      frameCount: 141,
-      frameFilePath: "/bus-rencontre/BUS_RENCONTRE_",
-      startingFrame: 50,
+      canvasWidth: 805,
+      canvasHeight: 453,
+      frameCount: 146,
+      frameFilePath: "/building/BUILDING_",
+      startingFrame: 0,
       graph: {
         src: "/graph-rencontre.png",
         offset: "bottom-[-5px]",
-        frame: 150,
+        frame: 145,
+        buttons: null,
+        srcs: null,
       },
     },
     intro: [
@@ -128,5 +142,5 @@ export const CONTENT = [
       statLabel:
         "La part de voyageurs handicapés qui sont satisfaits de l’évolution",
     },
-  }, */
+  },
 ];

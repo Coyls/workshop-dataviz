@@ -2,6 +2,7 @@ import cls from "classnames";
 import { MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GraphSvg } from "../graph-svg/graph-rencontre-svg";
+import { GraphType } from "../buttons-provider/buttonts-provider";
 
 export interface CanvasProps {
   scrollYProgress: MotionValue<number>;
@@ -15,6 +16,8 @@ export interface CanvasProps {
     src: string;
     offset?: string;
     frame: number;
+    buttons?: () => JSX.Element;
+    srcs: Record<GraphType, { src: string; offset: string }>;
   };
 }
 
@@ -111,7 +114,12 @@ export default function Canvas(props: CanvasProps) {
 
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
-        if (graph) setGraphVisibility(frameIndex >= graph.frame);
+        if (graph) {
+          console.log(" graph.frame", graph.frame);
+          console.log("graphVisibility", graphVisibility);
+
+          setGraphVisibility(frameIndex >= graph.frame);
+        }
         requestAnimationFrame(() => updateImage(frameIndex));
       }
     };
@@ -128,14 +136,18 @@ export default function Canvas(props: CanvasProps) {
     <div ref={canvasContainerRef} className="width-full relative  mt-56">
       <canvas ref={canvasRef} className={cls(className)}></canvas>
 
-      <div className="hidden bottom-[-5px]"></div>
-      <div className="hidden bottom-[-110px]"></div>
+      <div className="hidden bottom-[15px]"></div>
+      <div className="hidden bottom-[-88px]"></div>
+      <div className="hidden bottom-[20px]"></div>
+      <div className="hidden bottom-[30px]"></div>
 
       {graph && (
         <GraphSvg
           visible={graphVisibility}
           src={graph?.src as string}
           offset={graph?.offset}
+          buttons={graph.buttons}
+          srcs={graph?.srcs}
         />
       )}
     </div>
