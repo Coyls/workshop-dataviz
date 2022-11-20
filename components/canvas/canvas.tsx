@@ -30,6 +30,7 @@ export interface CanvasProps {
 
 export default function Canvas(props: CanvasProps) {
   const {
+    isFirstSection = false,
     scrollYProgress,
     className = "",
     frameFilePath,
@@ -41,7 +42,7 @@ export default function Canvas(props: CanvasProps) {
     draw,
   } = props;
 
-  // const nbDuplicateFrame = sec
+  const nbDuplicateFrame = isFirstSection ? 50 : 50;
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +60,7 @@ export default function Canvas(props: CanvasProps) {
   const duplicateLastFrame = () => {
     const lastFrame = imageLoads[imageLoads.length - 1];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < nbDuplicateFrame; i++) {
       imageLoads.push(lastFrame);
     }
 
