@@ -56,6 +56,7 @@ export const ScrollSection = (props: ScrollSectionProps) => {
             className="w-full"
             startingFrame={section.canvas.startingFrame}
             graph={section.canvas.graph}
+            draw={section.canvas.draw}
           />
         </motion.div>
       </div>

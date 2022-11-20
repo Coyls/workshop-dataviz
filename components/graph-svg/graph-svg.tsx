@@ -3,7 +3,7 @@
 import cls from "classnames";
 import { useEffect, useState } from "react";
 import { GraphType, useButtons } from "../buttons-provider/buttonts-provider";
-export interface GraphRencontreSvgProps {
+export interface GraphSvgProps {
   visible: boolean;
   src: string;
   offset?: string;
@@ -11,7 +11,7 @@ export interface GraphRencontreSvgProps {
   srcs?: Record<GraphType, { src: string; offset: string }>;
 }
 
-export const GraphSvg = (props: GraphRencontreSvgProps) => {
+export const GraphSvg = (props: GraphSvgProps) => {
   const { visible, src, offset = "bottom-0", buttons, srcs } = props;
 
   const visibleClass = visible ? "opacity-100" : "opacity-0";
