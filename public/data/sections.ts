@@ -40,7 +40,7 @@ export const CONTENT = [
       draw: {
         src: "/draw-bus.png",
         frameStart: 150,
-        frameEnd: 1000,
+        frameEnd: 171,
       },
     },
     intro: [
@@ -78,7 +78,7 @@ export const CONTENT = [
       draw: {
         src: "/draw-roof.png",
         frameStart: 135,
-        frameEnd: 1000,
+        frameEnd: 151,
       },
     },
     intro: [
@@ -161,7 +161,7 @@ export const CONTENT = [
       draw: {
         src: "/draw-building.png",
         frameStart: 145,
-        frameEnd: 1000,
+        frameEnd: 165,
       },
     },
     intro: [
