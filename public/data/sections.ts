@@ -40,8 +40,9 @@ export const CONTENT = [
         "La loi du 11 février 2005 stipule que les personnes handicapées doivent être en mesure de monter et descendre des véhicules routiers ou des rames. La réalité elle, est bien différente.",
         "Cette situation peut amener les personnes handicapées à être mal à l’aise et stressées à l’idée de prendre le bus.",
       ],
-      statNumber: { number: 433 },
-      statLabel: "arrêts équipés en 2017",
+      statNumber: { number: "12K" },
+      statLabel: "arrêts de bus total,en Île-De-france (2022)",
+      bigLabel: true
     },
   },
   {
@@ -131,8 +132,6 @@ export const CONTENT = [
     ],
     dialog: DialogQuotidiensDifferents,
     stat: {
-      title:
-        "Quel est le ressenti des personnes à handicap moteur par rapport aux transports en commun ?",
       text: [
         "On constate une évolution des dispositifs mis en place par les différentes AOM*, et une vraie prise de conscience génrale.",
         " Malgré ça, les personnes concernées par l’accessibilité de la mobilité restent en grande partie insatisfaites par les infrastructures et solutions proposées.",
@@ -140,7 +139,7 @@ export const CONTENT = [
       legend: "* Autorités Organisatrices de la Mobilité",
       statNumber: { number: "35%", isYellow: true },
       statLabel:
-        "La part de voyageurs handicapés qui sont satisfaits de l’évolution",
+        "Des voyageurs handicapés sont satisfaits de l’évolution des métro en île-de-france",
     },
   },
 ];

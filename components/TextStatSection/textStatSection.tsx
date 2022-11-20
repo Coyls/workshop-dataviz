@@ -8,10 +8,11 @@ type TextStatSectionProps = {
     statLabel: string, 
     noStat: boolean,
     legend: string,
-    children: string;
+    children: string,
+    bigLabel?: boolean
 }
 
-export function TextStatSection({title, statNumber, statLabel,noStat, children, legend}: TextStatSectionProps){
+export function TextStatSection({title, statNumber, statLabel,noStat, children, legend, bigLabel}: TextStatSectionProps){
 
     return <>
             <div className="font-['Eyra-400Bold'] text-xl">
@@ -30,7 +31,7 @@ export function TextStatSection({title, statNumber, statLabel,noStat, children, 
                     <div className={cls(statNumber.isYellow ? styles.highlightYellow : styles.highlightLila, "flex justify-center items-center")}>
                         <div className="text-[#141414] text-5xl font-['Eyra-400Bold'] pr-[8px]">{statNumber.number}</div>
                     </div>
-                    <div className="font-['Eyra-200ExtraLight'] text-2xl uppercase">
+                    <div className={cls(bigLabel ? "font-['Eyra-400ExtraLight']" : "font-['Eyra-200ExtraLight']", "text-2xl uppercase ml-1")}>
                         {statLabel}
                     </div>
                 </div> 
