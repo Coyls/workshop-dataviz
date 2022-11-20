@@ -122,8 +122,6 @@ export const CONTENT = [
     ],
     dialog: DialogHandicapMetro,
     stat: {
-      title:
-        "Sur les 15 lignes du métro parisien, combien sont accessibles pour les personnes atteintes d’handicap moteur ?",
       text: [
         "Le métro parisien pose un véritable soucis d’accessibilité car les infrastructure sont vieillissantes.",
         " Dans la majorité des lignes, l’absence d’ascenseur ne permet pas aux personnes à handicap moteur d’accéder au métro.",
