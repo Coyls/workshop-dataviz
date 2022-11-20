@@ -20,6 +20,7 @@ export const GraphSvg = (props: GraphSvgProps) => {
   const visibleClass = visible ? "opacity-100" : "opacity-0";
 
   const { switchButtons, switchButtonsBuilding } = useButtons();
+  const [classRight, setClassRight] = useState<string>();
 
   const [srcGraph, setSrcGraph] = useState(
     srcs
@@ -54,6 +55,8 @@ export const GraphSvg = (props: GraphSvgProps) => {
           ? srcs[switchButtons].src
           : srcs[switchButtonsBuilding].src
       );
+      setClassRight(srcs[switchButtons] ? "right-[-225px]" : "right-0");
+
       setClassName(
         cls(
           "w-full h-auto absolute",
@@ -80,7 +83,13 @@ export const GraphSvg = (props: GraphSvgProps) => {
         alt="bg"
       />
       <div
-        className={cls("absolute right-0 bottom-0 z-50", { hidden: !visible })}
+        className={cls(
+          "absolute bottom-0 z-50 w-full",
+          {
+            hidden: !visible,
+          },
+          classRight
+        )}
       >
         {Buttons}
       </div>

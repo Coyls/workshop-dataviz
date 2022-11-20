@@ -53,7 +53,7 @@ export function Header({ currentIndex, setCurrentIndex }: HeaderProps) {
         </div>
         <div className="flex-1 flex items-stretch gap-2">
           <HeaderItem
-            title="La recontre"
+            title="La rencontre"
             isDeployed={isDeployed}
             index={1}
             currentIndex={currentIndex}

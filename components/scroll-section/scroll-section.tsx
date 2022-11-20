@@ -57,6 +57,7 @@ export const ScrollSection = (props: ScrollSectionProps) => {
             startingFrame={section.canvas.startingFrame}
             graph={section.canvas.graph}
             draw={section.canvas.draw}
+            isFirstSection={section.index === 1}
           />
         </motion.div>
       </div>

@@ -6,6 +6,7 @@ import { GraphTypeBus } from "../buttons-provider/buttonts-provider";
 import { DrawSvg } from "../draw-svg/draw-svg";
 
 export interface CanvasProps {
+  isFirstSection?: boolean;
   scrollYProgress: MotionValue<number>;
   frameFilePath: string;
   canvasWidth: number;
@@ -29,6 +30,7 @@ export interface CanvasProps {
 
 export default function Canvas(props: CanvasProps) {
   const {
+    isFirstSection = false,
     scrollYProgress,
     className = "",
     frameFilePath,
@@ -39,6 +41,8 @@ export default function Canvas(props: CanvasProps) {
     graph,
     draw,
   } = props;
+
+  const nbDuplicateFrame = isFirstSection ? 50 : 50;
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -56,7 +60,7 @@ export default function Canvas(props: CanvasProps) {
   const duplicateLastFrame = () => {
     const lastFrame = imageLoads[imageLoads.length - 1];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < nbDuplicateFrame; i++) {
       imageLoads.push(lastFrame);
     }
 
@@ -150,6 +154,8 @@ export default function Canvas(props: CanvasProps) {
       <div className="hidden bottom-[5px]"></div>
       <div className="hidden bottom-[30px]"></div>
       <div className="hidden bottom-[65px]"></div>
+      <div className="hidden right-[-225px]"></div>
+      <div className="hidden right-0"></div>
       {graph && (
         <GraphSvg
           visible={graphVisibility}

@@ -3,7 +3,7 @@ import { GraphButtonBus } from "./GraphButton/graphButtonBus";
 
 export function GraphButtonsBus() {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 mx-auto">
       <GraphButtonBus type={GraphTypeBus.TIME} label="nombre / temps" />
       <GraphButtonBus type={GraphTypeBus.DISTANCE} label="nombre / distance" />
     </div>

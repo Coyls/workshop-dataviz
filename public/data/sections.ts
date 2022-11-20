@@ -40,7 +40,7 @@ export const CONTENT = [
       draw: {
         src: "/draw-bus.png",
         frameStart: 150,
-        frameEnd: 1000,
+        frameEnd: 171,
       },
     },
     intro: [
@@ -54,7 +54,7 @@ export const CONTENT = [
         "Cette situation peut amener les personnes handicapées à être mal à l’aise et stressées à l’idée de prendre le bus.",
       ],
       statNumber: { number: "12K" },
-      statLabel: "arrêts de bus total,en Île-De-france (2022)",
+      statLabel: "arrêts de bus total ,en Île-De-france (2022)",
       bigLabel: true,
     },
   },
@@ -78,7 +78,7 @@ export const CONTENT = [
       draw: {
         src: "/draw-roof.png",
         frameStart: 135,
-        frameEnd: 1000,
+        frameEnd: 151,
       },
     },
     intro: [
@@ -161,7 +161,7 @@ export const CONTENT = [
       draw: {
         src: "/draw-building.png",
         frameStart: 145,
-        frameEnd: 1000,
+        frameEnd: 165,
       },
     },
     intro: [
