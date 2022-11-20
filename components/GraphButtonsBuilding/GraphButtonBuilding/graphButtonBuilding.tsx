@@ -1,18 +1,19 @@
 import {
-  GraphType,
+  GraphTypeBus,
   useButtons,
 } from "../../buttons-provider/buttonts-provider";
 import cls from "classnames";
+import { GraphTypeBuilding } from "../../buttons-provider/buttonts-provider";
 
-type GraphButtonProps = {
+type GraphButtonBuildingProps = {
   label: string;
-  type: GraphType;
+  type: GraphTypeBuilding;
 };
 
-export function GraphButtonBuilding({ label, type }: GraphButtonProps) {
-  const { switchButtons, setGraphType } = useButtons();
+export function GraphButtonBuilding({ label, type }: GraphButtonBuildingProps) {
+  const { switchButtonsBuilding, setGraphTypeBuilding } = useButtons();
 
-  const isActive = type === switchButtons;
+  const isActive = type === switchButtonsBuilding;
 
   const className = cls(
     isActive ? "bg-[#141414] text-[#FCF6FF]" : "text-[#141414]",
@@ -20,7 +21,7 @@ export function GraphButtonBuilding({ label, type }: GraphButtonProps) {
   );
 
   return (
-    <button onClick={() => setGraphType(type)} className={className}>
+    <button onClick={() => setGraphTypeBuilding(type)} className={className}>
       {label}
     </button>
   );

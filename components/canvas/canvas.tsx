@@ -2,7 +2,7 @@ import cls from "classnames";
 import { MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GraphSvg } from "../graph-svg/graph-svg";
-import { GraphType } from "../buttons-provider/buttonts-provider";
+import { GraphTypeBus } from "../buttons-provider/buttonts-provider";
 import { DrawSvg } from "../draw-svg/draw-svg";
 
 export interface CanvasProps {
@@ -23,7 +23,7 @@ export interface CanvasProps {
     offset?: string;
     frame: number;
     buttons?: () => JSX.Element;
-    srcs: Record<GraphType, { src: string; offset: string }>;
+    srcs: Record<string, { src: string; offset: string }>;
   };
 }
 
@@ -122,7 +122,6 @@ export default function Canvas(props: CanvasProps) {
 
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
-        console.log("frameIndex", frameIndex);
         if (graph) {
           setGraphVisibility(frameIndex >= graph.frame);
         }

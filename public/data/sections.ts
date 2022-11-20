@@ -1,9 +1,14 @@
+import {
+  GraphTypeBuilding,
+  GraphTypeBus,
+} from "../../components/buttons-provider/buttonts-provider";
 import { DialogAiderComprendre } from "../../components/DialogSVGs/dialogAiderComprendre";
 import { DialogHandicapMetro } from "../../components/DialogSVGs/dialogHandicapMetro";
 import { DialogLaRencontre } from "../../components/DialogSVGs/dialogLaRencontre";
 import { DialogQuotidiensDifferents } from "../../components/DialogSVGs/dialogQuotidiensDifferents";
+import { GraphButtonBuilding } from "../../components/GraphButtonsBuilding/GraphButtonBuilding/graphButtonBuilding";
+import { GraphButtonsBuilding } from "../../components/GraphButtonsBuilding/graphButtonsBuilding";
 import { GraphButtonsBus } from "../../components/GraphButtonsBus/graphButtonsBus";
-import { GraphType } from "../../components/buttons-provider/buttonts-provider";
 
 export const CONTENT = [
   {
@@ -22,8 +27,11 @@ export const CONTENT = [
         frame: 170,
         buttons: GraphButtonsBus,
         srcs: {
-          [GraphType.TIME]: { src: "/graph-time.png", offset: "bottom-[15px]" },
-          [GraphType.DISTANCE]: {
+          [GraphTypeBus.TIME]: {
+            src: "/graph-time.png",
+            offset: "bottom-[15px]",
+          },
+          [GraphTypeBus.DISTANCE]: {
             src: "/graph-distance.png",
             offset: "bottom-[5px]",
           },
@@ -138,8 +146,17 @@ export const CONTENT = [
         src: "/graph-building.png",
         offset: "bottom-[65px]",
         frame: 165,
-        buttons: null,
-        srcs: null,
+        buttons: GraphButtonsBuilding,
+        srcs: {
+          [GraphTypeBuilding.BUS]: {
+            src: "/graph-building-bus.png",
+            offset: "bottom-[65px]",
+          },
+          [GraphTypeBuilding.METRO]: {
+            src: "/graph-building-metro.png",
+            offset: "bottom-[65px]",
+          },
+        },
       },
       draw: {
         src: "/draw-building.png",

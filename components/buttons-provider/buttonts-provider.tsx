@@ -1,13 +1,20 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
 export interface ButtonsContextInterface {
-  switchButtons: GraphType;
-  setGraphType: (type: GraphType) => void;
+  switchButtons: GraphTypeBus;
+  switchButtonsBuilding: GraphTypeBuilding;
+  setGraphType: (type: GraphTypeBus) => void;
+  setGraphTypeBuilding: (type: GraphTypeBuilding) => void;
 }
 
-export enum GraphType {
+export enum GraphTypeBus {
   TIME = "TIME",
   DISTANCE = "DISTANCE",
+}
+
+export enum GraphTypeBuilding {
+  BUS = "BUS",
+  METRO = "METRO",
 }
 
 const ButtonsCtx = createContext<ButtonsContextInterface>(
@@ -15,15 +22,30 @@ const ButtonsCtx = createContext<ButtonsContextInterface>(
 );
 
 export const ButtonsProvider = ({ children }: { children?: ReactNode }) => {
-  const [switchButtons, setSwitchButtons] = useState<GraphType>(GraphType.TIME);
+  const [switchButtons, setSwitchButtons] = useState<GraphTypeBus>(
+    GraphTypeBus.TIME
+  );
 
-  const setGraphType = (type: GraphType) => {
+  const [switchButtonsBuilding, setSwitchButtonsBuilding] =
+    useState<GraphTypeBuilding>(GraphTypeBuilding.BUS);
+
+  const setGraphType = (type: GraphTypeBus) => {
     setSwitchButtons(type);
+    console.log("type", type);
+  };
+
+  const setGraphTypeBuilding = (type: GraphTypeBuilding) => {
+    setSwitchButtonsBuilding(type);
   };
 
   return (
     <ButtonsCtx.Provider
-      value={{ switchButtons, setGraphType: (type) => setGraphType(type) }}
+      value={{
+        switchButtons,
+        setGraphType: (type) => setGraphType(type),
+        switchButtonsBuilding,
+        setGraphTypeBuilding: (type) => setGraphTypeBuilding(type),
+      }}
     >
       {children}
     </ButtonsCtx.Provider>

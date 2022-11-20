@@ -1,12 +1,12 @@
 import {
-  GraphType,
+  GraphTypeBus,
   useButtons,
 } from "../../buttons-provider/buttonts-provider";
 import cls from "classnames";
 
 type GraphButtonProps = {
   label: string;
-  type: GraphType;
+  type: GraphTypeBus;
 };
 
 export function GraphButtonBus({ label, type }: GraphButtonProps) {

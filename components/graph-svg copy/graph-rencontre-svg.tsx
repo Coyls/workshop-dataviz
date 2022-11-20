@@ -6,37 +6,25 @@ import {
   GraphTypeBus,
   useButtons,
 } from "../buttons-provider/buttonts-provider";
-export interface GraphSvgProps {
+export interface GraphRencontreSvgProps {
   visible: boolean;
   src: string;
   offset?: string;
   buttons?: () => JSX.Element;
-  srcs?: Record<string, { src: string; offset: string }>;
+  srcs?: Record<GraphTypeBus, { src: string; offset: string }>;
 }
 
-export const GraphSvg = (props: GraphSvgProps) => {
+export const GraphSvg = (props: GraphRencontreSvgProps) => {
   const { visible, src, offset = "bottom-0", buttons, srcs } = props;
 
   const visibleClass = visible ? "opacity-100" : "opacity-0";
 
-  const { switchButtons, switchButtonsBuilding } = useButtons();
-
+  const { switchButtons } = useButtons();
   const [srcGraph, setSrcGraph] = useState(
-    srcs
-      ? srcs[switchButtons]?.src
-        ? srcs[switchButtons].src
-        : srcs[switchButtonsBuilding].src
-      : src
+    srcs ? srcs[switchButtons].src : src
   );
   const [className, setClassName] = useState(
-    cls(
-      "w-full h-auto absolute",
-      srcs
-        ? srcs[switchButtons]?.offset
-          ? srcs[switchButtons].offset
-          : srcs[switchButtonsBuilding].offset
-        : offset
-    )
+    cls("w-full h-auto absolute", srcs ? srcs[switchButtons].offset : offset)
   );
   const [Buttons, setButtons] = useState<JSX.Element>();
 
@@ -49,23 +37,16 @@ export const GraphSvg = (props: GraphSvgProps) => {
   useEffect(() => {
     console.log("srcs", srcs);
     if (srcs) {
-      setSrcGraph(
-        srcs[switchButtons]?.src
-          ? srcs[switchButtons].src
-          : srcs[switchButtonsBuilding].src
-      );
+      setSrcGraph(srcs[switchButtons].src);
       setClassName(
         cls(
           "w-full h-auto absolute",
-          srcs
-            ? srcs[switchButtons]?.offset
-              ? srcs[switchButtons].offset
-              : srcs[switchButtonsBuilding].offset
-            : offset
+          srcs ? srcs[switchButtons].offset : offset
         )
       );
     }
-  }, [switchButtons, switchButtonsBuilding, srcs]);
+    console.log("srcGraph", srcGraph);
+  }, [switchButtons, srcs]);
 
   return (
     <>
@@ -79,9 +60,7 @@ export const GraphSvg = (props: GraphSvgProps) => {
         src="./bg-white.png"
         alt="bg"
       />
-      <div
-        className={cls("absolute right-0 bottom-0 z-50", { hidden: !visible })}
-      >
+      <div className={cls("absolute right-0 bottom-0", { hidden: !visible })}>
         {Buttons}
       </div>
     </>
