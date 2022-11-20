@@ -38,24 +38,29 @@ export function Footer(){
         </div>
         <div className="py-9 px-[70px] bg-[#141414] flex">
             <div className="flex gap-10 items-center">
-                <div>
+                <Link href="https://www.lecole-cci.fr/">
+                    <div>
+                        <Image
+                            src="/image/logoCCI.png"
+                            width={120}
+                            height={36}
+                            alt="Logo de la CCI" />
+                    </div>
+                </Link>
+                <Link href="https://www.gobelins.fr/">
                     <Image
-                        src="/image/logoCCI.png"
-                        width={120}
-                        height={36}
-                        alt="Logo de la CCI" />
-                </div>
-                <Image
-                    src="/image/logoGobelins.png"
-                    width={60}
-                    height={60}
-                    alt="Logo de Gobelins Paris" />
+                        src="/image/logoGobelins.png"
+                        width={60}
+                        height={60}
+                        alt="Logo de Gobelins Paris" />
+                </Link>
+
             </div>
             <div className="flex-1 flex justify-end pr-14 text-[#FEFCFF] font-['Eyra-400Light']">
                 <div>
                     Projet réalisé dans le cadre de la formation CCI - École des Gobelins Annecy par <br />
                     <span className="font-['Eyra-400Regular']">
-                        Lucas Leperlier, Jean Deleage, Apolline Grember, Jereymy Lagadec, Loïc Greco
+                        Lucas Leperlier, Jean Deleage, Apolline Grember, Jeremy Lagadec, Loïc Greco
                     </span>
                 </div>
             </div>
