@@ -54,7 +54,7 @@ export const CONTENT = [
         "Cette situation peut amener les personnes handicapées à être mal à l’aise et stressées à l’idée de prendre le bus.",
       ],
       statNumber: { number: "12K" },
-      statLabel: "arrêts de bus total,en Île-De-france (2022)",
+      statLabel: "arrêts de bus total ,en Île-De-france (2022)",
       bigLabel: true,
     },
   },
