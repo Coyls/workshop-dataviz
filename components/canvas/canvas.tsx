@@ -138,8 +138,9 @@ export default function Canvas(props: CanvasProps) {
 
       <div className="hidden bottom-[15px]"></div>
       <div className="hidden bottom-[-88px]"></div>
-      <div className="hidden bottom-[20px]"></div>
+      <div className="hidden bottom-[5px]"></div>
       <div className="hidden bottom-[30px]"></div>
+      <div className="hidden bottom-[65px]"></div>
 
       {graph && (
         <GraphSvg

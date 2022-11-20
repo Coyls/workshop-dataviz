@@ -25,7 +25,7 @@ export const CONTENT = [
           [GraphType.TIME]: { src: "/graph-time.png", offset: "bottom-[15px]" },
           [GraphType.DISTANCE]: {
             src: "/graph-distance.png",
-            offset: "bottom-[20px]",
+            offset: "bottom-[5px]",
           },
         },
       },
@@ -119,8 +119,8 @@ export const CONTENT = [
       frameFilePath: "/building/BUILDING_",
       startingFrame: 0,
       graph: {
-        src: "/graph-rencontre.png",
-        offset: "bottom-[-5px]",
+        src: "/graph-building.png",
+        offset: "bottom-[65px]",
         frame: 145,
         buttons: null,
         srcs: null,
