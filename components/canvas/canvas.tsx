@@ -1,8 +1,9 @@
 import cls from "classnames";
 import { MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { GraphSvg } from "../graph-svg/graph-rencontre-svg";
+import { GraphSvg } from "../graph-svg/graph-svg";
 import { GraphType } from "../buttons-provider/buttonts-provider";
+import { DrawSvg } from "../draw-svg/draw-svg";
 
 export interface CanvasProps {
   scrollYProgress: MotionValue<number>;
@@ -12,6 +13,11 @@ export interface CanvasProps {
   className?: string;
   frameCount: number;
   startingFrame: number;
+  draw?: {
+    src: string;
+    frameStart: number;
+    frameEnd: number;
+  };
   graph?: {
     src: string;
     offset?: string;
@@ -31,6 +37,7 @@ export default function Canvas(props: CanvasProps) {
     frameCount,
     startingFrame,
     graph,
+    draw,
   } = props;
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -38,6 +45,7 @@ export default function Canvas(props: CanvasProps) {
 
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
   const [graphVisibility, setGraphVisibility] = useState<boolean>(false);
+  const [drawVisibility, setDrawVisibility] = useState<boolean>(false);
 
   const imageLoads: HTMLImageElement[] = [];
 
@@ -65,7 +73,7 @@ export default function Canvas(props: CanvasProps) {
 
     duplicateLastFrame();
 
-    console.log("Images Preload ! : ", imageLoads);
+    // console.log("Images Preload ! : ", imageLoads);
     console.log("imageLoads Length !", imageLoads.length);
     console.timeEnd("preloadImages");
   };
@@ -114,11 +122,14 @@ export default function Canvas(props: CanvasProps) {
 
       if (frameIndex !== currentFrameIndex) {
         setCurrentFrameIndex(frameIndex);
+        console.log("frameIndex", frameIndex);
         if (graph) {
-          console.log(" graph.frame", graph.frame);
-          console.log("graphVisibility", graphVisibility);
-
           setGraphVisibility(frameIndex >= graph.frame);
+        }
+        if (draw) {
+          setDrawVisibility(
+            frameIndex >= draw.frameStart && frameIndex <= draw.frameEnd
+          );
         }
         requestAnimationFrame(() => updateImage(frameIndex));
       }
@@ -135,21 +146,21 @@ export default function Canvas(props: CanvasProps) {
   return (
     <div ref={canvasContainerRef} className="width-full relative  mt-56">
       <canvas ref={canvasRef} className={cls(className)}></canvas>
-
       <div className="hidden bottom-[15px]"></div>
       <div className="hidden bottom-[-88px]"></div>
-      <div className="hidden bottom-[20px]"></div>
+      <div className="hidden bottom-[5px]"></div>
       <div className="hidden bottom-[30px]"></div>
-
+      <div className="hidden bottom-[65px]"></div>
       {graph && (
         <GraphSvg
           visible={graphVisibility}
-          src={graph?.src as string}
+          src={graph?.src}
           offset={graph?.offset}
           buttons={graph.buttons}
           srcs={graph?.srcs}
         />
       )}
+      {draw && <DrawSvg visible={drawVisibility} src={draw?.src} />}
     </div>
   );
 }

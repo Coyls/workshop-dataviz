@@ -19,15 +19,20 @@ export const CONTENT = [
       graph: {
         src: "/graph-time.png",
         offset: "bottom-[-5px]",
-        frame: 150,
+        frame: 170,
         buttons: GraphButtonsBus,
         srcs: {
           [GraphType.TIME]: { src: "/graph-time.png", offset: "bottom-[15px]" },
           [GraphType.DISTANCE]: {
             src: "/graph-distance.png",
-            offset: "bottom-[20px]",
+            offset: "bottom-[5px]",
           },
         },
+      },
+      draw: {
+        src: "/draw-bus.png",
+        frameStart: 150,
+        frameEnd: 1000,
       },
     },
     intro: [
@@ -42,7 +47,7 @@ export const CONTENT = [
       ],
       statNumber: { number: "12K" },
       statLabel: "arrêts de bus total,en Île-De-france (2022)",
-      bigLabel: true
+      bigLabel: true,
     },
   },
   {
@@ -58,9 +63,14 @@ export const CONTENT = [
       graph: {
         src: "/graph-roof.png",
         offset: "bottom-[30px]",
-        frame: 150,
+        frame: 170,
         buttons: null,
         srcs: null,
+      },
+      draw: {
+        src: "/draw-roof.png",
+        frameStart: 135,
+        frameEnd: 1000,
       },
     },
     intro: [
@@ -93,6 +103,11 @@ export const CONTENT = [
         buttons: null,
         srcs: null,
       },
+      draw: {
+        src: "/draw-stares.png",
+        frameStart: 40,
+        frameEnd: 90,
+      },
     },
     intro: [
       "Après avoir pris le bus, Anna et Carl discutent en chemin jusqu’à arriver devant une bouche de métro.",
@@ -120,11 +135,16 @@ export const CONTENT = [
       frameFilePath: "/building/BUILDING_",
       startingFrame: 0,
       graph: {
-        src: "/graph-rencontre.png",
-        offset: "bottom-[-5px]",
-        frame: 145,
+        src: "/graph-building.png",
+        offset: "bottom-[65px]",
+        frame: 165,
         buttons: null,
         srcs: null,
+      },
+      draw: {
+        src: "/draw-building.png",
+        frameStart: 145,
+        frameEnd: 1000,
       },
     },
     intro: [
