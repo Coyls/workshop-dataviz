@@ -53,6 +53,7 @@ export default function Home() {
     <Head>
       <title>Siah.</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="shortcut icon" href="/icon.ico" />
     </Head>
     <div className="custom-home-bg flex flex-col scroll-smooth">
       <Header 
